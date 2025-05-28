@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,29 +11,44 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
   </head>
   <body>
     <!-- Header -->
     <header class="header">
       <div class="container">
         <nav class="navigation">
-          <img
-            src="./img/photo_2025-05-26 16.17.33 2-min.png"
-            alt=""
-            class="logo"
-          />
-
+          <img src="./img/photo_logo.png" alt="Логотип" class="logo" />
           <ul class="nav-list">
-            <img src="./img/Variant7-min.png" alt="" class="button-tel" />
-            <li class="nav-li"><a class="nav-link">Головна</a></li>
-            <li class="nav-li"><a class="nav-link">Послуги</a></li>
-            <li class="nav-li"><a class="nav-link">Ціни</a></li>
-            <li class="nav-li"><a class="nav-link">Контакти</a></li>
+            <li class="nav-li">
+              <a href="tel:+380930029430">
+                <img
+                  src="./img/Variant7-min.png"
+                  alt="Кнопка телефону"
+                  class="button-tel"
+                />
+              </a>
+            </li>
+            <li class="nav-li"><a class="nav-link" href="#home">Головна</a></li>
+
+            <li class="nav-li"><a class="nav-link" href="#prices">Ціни</a></li>
+            <li class="nav-li">
+              <a class="nav-link" href="#services">Послуги</a>
+            </li>
+            <li class="nav-li">
+              <a class="nav-link" href="#contacts">Контакти</a>
+            </li>
           </ul>
         </nav>
       </div>
     </header>
-    <section class="main-title">
+
+    <!-- Main Title -->
+    <section id="home" class="main-title">
       <div class="container">
         <h1 class="firma-title">
           Наша компанія спеціалізується на купівлі чорного та кольорових металів
@@ -41,7 +56,9 @@
         </h1>
       </div>
     </section>
-    <section class="advantage">
+
+    <!-- Advantages -->
+    <section id="advantages" class="advantage">
       <div class="container">
         <h2 class="advantage-title">Наші головні переваги</h2>
         <ul class="advantage-ul">
@@ -54,24 +71,24 @@
         </ul>
       </div>
     </section>
-    <section class="price">
+
+    <!-- Prices -->
+    <section id="prices" class="price">
       <h2 class="price-h2">Ціни та Умови</h2>
       <h3 class="price-h3">БІЛЬША ВАГА — БІЛЬША ЦІНА!</h3>
       <h4 class="price-h4">ОПЛАТА ЗА ФАКТОМ ВИВАНТАЖЕННЯ</h4>
-      <h5 class="price-h5">
-        <p>Ціни актуальні на <span id="current-date"></span></p>
+      <p class="price-h5">Ціни актуальні на <span id="current-date"></span></p>
 
-        <script>
-          function updateDate() {
-            const now = new Date();
-            const options = { year: 'numeric', month: 'long', day: 'numeric' };
-            const formattedDate = now.toLocaleDateString('uk-UA', options);
-            document.getElementById('current-date').textContent = formattedDate;
-          }
+      <script>
+        function updateDate() {
+          const now = new Date();
+          const options = { year: 'numeric', month: 'long', day: 'numeric' };
+          const formattedDate = now.toLocaleDateString('uk-UA', options);
+          document.getElementById('current-date').textContent = formattedDate;
+        }
+        updateDate();
+      </script>
 
-          updateDate(); // Оновити дату при завантаженні сторінки
-        </script>
-      </h5>
       <div class="table">
         <table>
           <thead>
@@ -180,67 +197,80 @@
         На території здійснюється відеоспостереження.
       </h4>
     </section>
-    <section class="services">
+
+    <!-- Services -->
+    <section id="services" class="services">
       <div class="container">
         <h2 class="services-h2">Послуги</h2>
         <div class="services-column-left">
           <img
-            src="./img/Rectangle 3-min.png"
+            src="./img/Rectangle_3-min.png"
             alt=""
-            width="486px"
-            height="312px"
+            width="486"
+            height="312"
           />
           <p class="services-p">Прийом вторинної сировини</p>
         </div>
         <div class="services-column-right">
           <p class="services-p">Розвантаження брухту</p>
           <img
-            src="./img/Rectangle 3 (1)-min.png"
+            src="./img/Rectangle_3_(1)-min.png"
             alt=""
-            width="486px"
-            height="312px"
+            width="486"
+            height="312"
           />
         </div>
         <div class="services-column-left">
           <img
-            src="./img/Rectangle 3 (2)-min.png"
+            src="./img/Rectangle_3_(2)-min.png"
             alt=""
-            width="486px"
-            height="312px"
+            width="486"
+            height="312"
           />
           <p class="services-p">Спектральний аналіз складу металу</p>
         </div>
         <div class="services-column-right">
           <p class="services-p">Порізка металу</p>
           <img
-            src="./img/Rectangle 3 (3)-min.png"
+            src="./img/Rectangle_3_(3)-min.png"
             alt=""
-            width="486px"
-            height="312px"
+            width="486"
+            height="312"
           />
         </div>
       </div>
     </section>
-    <section class="contacts">
+
+    <!-- Contacts -->
+    <section id="contacts" class="contacts">
       <h2 class="contacts-h2">Контакти</h2>
       <div class="container container-contacts">
         <div>
           <div class="contacts-div">
             <p class="contacts-p">Телефон:</p>
-            <p class="contacts-p2">+38(093)0029430</p>
+            <p class="contacts-p2">
+              <a href="tel:+380930029430">+38(093)0029430</a>
+            </p>
           </div>
           <div class="contacts-div">
             <p class="contacts-p">Email:</p>
-            <p class="contacts-p2">zpmetallolom@gmail.com</p>
+            <p class="contacts-p2">
+              <a href="mailto:zpmetallolom@gmail.com">zpmetallolom@gmail.com</a>
+            </p>
           </div>
           <div class="contacts-div">
             <p class="contacts-p">Адреса:</p>
             <p class="contacts-p2">
-              Україна,<br />
-              м. Запоріжжя,<br />
-              Шевченківський м-н,<br />
-              вул. Полякова 12-А,<br />
-              гаражний кооператив «Кристал»
+              <a
+                href="https://www.google.com/maps/place/Sdat%CA%B9+Metallolom/@47.8524509,35.2267101,17.99z/data=!4m14!1m7!3m6!1s0x40dc5d74308c5923:0xb9bce33996eb2bcd!2z0JrQvtC-0L_QtdGA0LDRgtC40LIg0JrRgNC40YHRgtCw0Ls!8m2!3d47.852433!4d35.228134!16s%2Fg%2F11gb3pcc7j!3m5!1s0x40dc5de83a660391:0x63d4609dd636ab4a!8m2!3d47.852646!4d35.2275807!16s%2Fg%2F11j2wlcc04!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDUyNi4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+              >
+                Україна,<br />
+                м. Запоріжжя,<br />
+                Шевченківський м-н,<br />
+                вул. Полякова 12-А,<br />
+                гаражний кооператив «Кристал»
+              </a>
             </p>
           </div>
           <div class="contacts-div">
@@ -249,7 +279,12 @@
           </div>
         </div>
         <div>
-          <img src="./img/мапа-min.png" alt="" />
+          <a
+            href="https://www.google.com/maps/place/Sdat%CA%B9+Metallolom/@47.8524509,35.2267101,17.99z/data=!4m14!1m7!3m6!1s0x40dc5d74308c5923:0xb9bce33996eb2bcd!2z0JrQvtC-0L_QtdGA0LDRgtC40LIg0JrRgNC40YHRgtCw0Ls!8m2!3d47.852433!4d35.228134!16s%2Fg%2F11gb3pcc7j!3m5!1s0x40dc5de83a660391:0x63d4609dd636ab4a!8m2!3d47.852646!4d35.2275807!16s%2Fg%2F11j2wlcc04!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDUyNi4wIKXMDSoASAFQAw%3D%3D"
+            target="_blank"
+          >
+            <img src="./img/map-min.png" alt="Мапа розташування" />
+          </a>
         </div>
       </div>
     </section>
