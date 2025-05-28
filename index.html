@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>zpmetallolom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <nav class="navigation">
+          <img
+            src="./img/photo_2025-05-26 16.17.33 2-min.png"
+            alt=""
+            class="logo"
+          />
+
+          <ul class="nav-list">
+            <img src="./img/Variant7-min.png" alt="" class="button-tel" />
+            <li class="nav-li"><a class="nav-link">Головна</a></li>
+            <li class="nav-li"><a class="nav-link">Послуги</a></li>
+            <li class="nav-li"><a class="nav-link">Ціни</a></li>
+            <li class="nav-li"><a class="nav-link">Контакти</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section class="main-title">
+      <div class="container">
+        <h1 class="firma-title">
+          Наша компанія спеціалізується на купівлі чорного та кольорових металів
+          за вигідними цінами.
+        </h1>
+      </div>
+    </section>
+    <section class="advantage">
+      <div class="container">
+        <h2 class="advantage-title">Наші головні переваги</h2>
+        <ul class="advantage-ul">
+          <li class="advantage-li">
+            Надійний партнер з викупу чорних та кольорових металів
+          </li>
+          <li class="advantage-li">Швидкий та вигідний викуп</li>
+          <li class="advantage-li">Прийом металобрухту за найкращими цінами</li>
+          <li class="advantage-li">Ми купуємо - Ви заробляєте</li>
+        </ul>
+      </div>
+    </section>
+    <section class="price">
+      <h2 class="price-h2">Ціни та Умови</h2>
+      <h3 class="price-h3">БІЛЬША ВАГА — БІЛЬША ЦІНА!</h3>
+      <h4 class="price-h4">ОПЛАТА ЗА ФАКТОМ ВИВАНТАЖЕННЯ</h4>
+      <h5 class="price-h5">
+        <p>Ціни актуальні на <span id="current-date"></span></p>
+
+        <script>
+          function updateDate() {
+            const now = new Date();
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            const formattedDate = now.toLocaleDateString('uk-UA', options);
+            document.getElementById('current-date').textContent = formattedDate;
+          }
+
+          updateDate(); // Оновити дату при завантаженні сторінки
+        </script>
+      </h5>
+      <div class="table">
+        <table>
+          <thead>
+            <tr class="name-scrap">
+              <th>Найменування металобрухту</th>
+              <th>Засмічення</th>
+              <th>Ціна за кг, грн</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Мідь</td>
+              <td>-1%</td>
+              <td>340</td>
+            </tr>
+            <tr>
+              <td>Латунь</td>
+              <td>-1%</td>
+              <td>215</td>
+            </tr>
+            <tr>
+              <td>Радіатор латунний</td>
+              <td>-1%</td>
+              <td>215</td>
+            </tr>
+            <tr>
+              <td>Алюміній побутовий</td>
+              <td>-1%</td>
+              <td>57</td>
+            </tr>
+            <tr>
+              <td>Алюміній ел-тех</td>
+              <td>-1%</td>
+              <td>94</td>
+            </tr>
+            <tr>
+              <td>Нержавіюча сталь</td>
+              <td>-1%</td>
+              <td>50</td>
+            </tr>
+            <tr>
+              <td>Нержавіюча сталь 8%</td>
+              <td>-1%</td>
+              <td>40</td>
+            </tr>
+            <tr>
+              <td>Магній</td>
+              <td>-1%</td>
+              <td>28</td>
+            </tr>
+            <tr>
+              <td>ЦАМ</td>
+              <td>-1%</td>
+              <td>55</td>
+            </tr>
+            <tr>
+              <td>Стружка міді</td>
+              <td>-1%</td>
+              <td>300</td>
+            </tr>
+            <tr>
+              <td>Стружка латунь</td>
+              <td>-1%</td>
+              <td>207</td>
+            </tr>
+            <tr>
+              <td>Свинец</td>
+              <td></td>
+              <td>65/63</td>
+            </tr>
+            <tr>
+              <td>Акумулятори</td>
+              <td>-2%</td>
+              <td>11/24</td>
+            </tr>
+            <tr>
+              <td>ТНЖ</td>
+              <td></td>
+              <td>25/28</td>
+            </tr>
+            <tr>
+              <td>Титан</td>
+              <td></td>
+              <td>90</td>
+            </tr>
+            <tr>
+              <td>%</td>
+              <td></td>
+              <td>4200</td>
+            </tr>
+            <tr>
+              <td>Чорний лом</td>
+              <td>-3%</td>
+              <td>6</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="price-doc">
+        Категорично заборонено приймати: <br />
+        - Брухт сумнівного походження;<br />
+        - Військові предмети (гільзи, кулі, снаряди, патрони тощо)<br />
+        Під час здачі побутового брухту обовʼязково предʼявити документи, що
+        посвідчують особу (паспорт, ID-картка).<br />
+        На території здійснюється відеоспостереження.
+      </h4>
+    </section>
+    <section class="services">
+      <div class="container">
+        <h2 class="services-h2">Послуги</h2>
+        <div class="services-column-left">
+          <img
+            src="./img/Rectangle 3-min.png"
+            alt=""
+            width="486px"
+            height="312px"
+          />
+          <p class="services-p">Прийом вторинної сировини</p>
+        </div>
+        <div class="services-column-right">
+          <p class="services-p">Розвантаження брухту</p>
+          <img
+            src="./img/Rectangle 3 (1)-min.png"
+            alt=""
+            width="486px"
+            height="312px"
+          />
+        </div>
+        <div class="services-column-left">
+          <img
+            src="./img/Rectangle 3 (2)-min.png"
+            alt=""
+            width="486px"
+            height="312px"
+          />
+          <p class="services-p">Спектральний аналіз складу металу</p>
+        </div>
+        <div class="services-column-right">
+          <p class="services-p">Порізка металу</p>
+          <img
+            src="./img/Rectangle 3 (3)-min.png"
+            alt=""
+            width="486px"
+            height="312px"
+          />
+        </div>
+      </div>
+    </section>
+    <section class="contacts">
+      <h2 class="contacts-h2">Контакти</h2>
+      <div class="container container-contacts">
+        <div>
+          <div class="contacts-div">
+            <p class="contacts-p">Телефон:</p>
+            <p class="contacts-p2">+38(093)0029430</p>
+          </div>
+          <div class="contacts-div">
+            <p class="contacts-p">Email:</p>
+            <p class="contacts-p2">zpmetallolom@gmail.com</p>
+          </div>
+          <div class="contacts-div">
+            <p class="contacts-p">Адреса:</p>
+            <p class="contacts-p2">
+              Україна,<br />
+              м. Запоріжжя,<br />
+              Шевченківський м-н,<br />
+              вул. Полякова 12-А,<br />
+              гаражний кооператив «Кристал»
+            </p>
+          </div>
+          <div class="contacts-div">
+            <p class="contacts-p">Графік роботи:</p>
+            <p class="contacts-p2">пн-нд: 08:00 - 18:00</p>
+          </div>
+        </div>
+        <div>
+          <img src="./img/мапа-min.png" alt="" />
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
