@@ -23,6 +23,15 @@
       <div class="container">
         <nav class="navigation">
           <img src="./img/photo_logo.png" alt="Логотип" class="logo" />
+          <p class="revision">Переглядів: <span id="viewCount">0</span></p>
+
+          <script>
+            // Отримуємо поточну кількість переглядів із localStorage
+            let views = localStorage.getItem('pageViews') || 0;
+            views = parseInt(views) + 1; // Збільшуємо лічильник
+            localStorage.setItem('pageViews', views); // Зберігаємо нове значення
+            document.getElementById('viewCount').textContent = views; // Відображаємо
+          </script>
           <ul class="nav-list">
             <li class="nav-li">
               <a href="tel:+380930029430">

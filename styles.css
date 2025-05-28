@@ -57,6 +57,13 @@ body {
 .logo {
   margin-right: auto;
 }
+.revision {
+  display: flex;
+  align-items: center;
+  padding-right: 200px;
+  color: #fafafa;
+  gap: 8px;
+}
 .button-tel {
   width: 64px;
   height: 64px;
@@ -151,6 +158,39 @@ body {
   padding-top: 32px;
   color: #fafafa;
   margin-bottom: 56px;
+}
+.table {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 32px;
+  margin-bottom: 56px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #fafafa;
+  background: rgba(145, 145, 145, 0.15);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+th {
+  font-weight: 600;
+  font-size: 20px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+td {
+  font-size: 18px;
 }
 
 .price-doc {
