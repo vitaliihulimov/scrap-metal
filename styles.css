@@ -1,4 +1,5 @@
-h1,
+# 
+/* h1,
 h2,
 h3,
 h4,
@@ -38,13 +39,18 @@ body {
   margin: 0 auto;
 }
 
-/* header */
+
 
 .nav-link {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   font-size: 24px;
   color: #fafafa;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: #923a3a;
 }
 .navigation {
   display: flex;
@@ -69,6 +75,11 @@ body {
   height: 64px;
 }
 
+
+.button-tel:hover,
+.button-tel:focus {
+  color: #923a3a;
+}
 .firma-title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
@@ -240,7 +251,7 @@ td {
   height: 312px;
 }
 
-/* contacts */
+
 
 .contacts-h2 {
   font-family: 'Montserrat', sans-serif;
@@ -271,4 +282,585 @@ td {
   display: flex;
   justify-content: space-between;
   padding-top: 42px;
+} */
+
+/* Базові стилі */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+ul,
+ol {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+address {
+  font-style: normal;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #242527;
+  margin: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Header */
+.nav-link {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  color: #fafafa;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: #923a3a;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 16px 0;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.logo {
+  margin-right: auto;
+  max-width: 204px; /* Обмежуємо розмір логотипу */
+  height: auto;
+}
+
+.revision {
+  display: flex;
+  align-items: center;
+  color: #fafafa;
+  gap: 8px;
+  padding-right: 100px;
+  font-size: 20px;
+}
+
+.button-tel {
+  width: 64px;
+  height: 64px;
+}
+
+/* Main Title */
+.firma-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  text-align: center;
+  color: #fafafa;
+  margin: 56px 120px 0 120px;
+}
+
+/* Advantages */
+.advantage-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 56px;
+  text-align: center;
+  color: #923a3a;
+  margin-top: 56px;
+}
+
+.advantage-ul {
+  display: flex;
+  gap: 24px;
+  padding-top: 40px;
+}
+
+.advantage-li {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  text-align: center;
+  color: #fff;
+  backdrop-filter: blur(20px);
+  box-shadow: inset 0 4px 20px 0 rgba(255, 255, 255, 0.4),
+    0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  background: rgba(145, 145, 145, 0.15);
+  border-radius: 16px;
+  width: 282px;
+  height: 228px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+/* Prices */
+.price-h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 56px;
+  text-align: center;
+  color: #923a3a;
+  margin-top: 56px;
+}
+
+.price-h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  color: #923a3a;
+  text-align: center;
+}
+
+.price-h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  color: #fafafa;
+  text-align: center;
+}
+
+.price-h5 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  color: #fafafa;
+  text-align: center;
+}
+
+.table {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 32px;
+  margin-bottom: 56px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #fafafa;
+  background: rgba(145, 145, 145, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+th {
+  font-weight: 600;
+  font-size: 20px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+td {
+  font-size: 18px;
+}
+
+.price-doc {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  color: #fafafa;
+  border-radius: 16px;
+  max-width: 996px;
+  backdrop-filter: blur(20px);
+  box-shadow: inset 0 4px 20px 0 rgba(255, 255, 255, 0.4),
+    0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  background: rgba(145, 145, 145, 0.15);
+  margin: 0 auto;
+  padding: 32px 102px;
+}
+
+/* Services */
+.services {
+  padding: 32px 102px 0 102px;
+}
+
+.services-h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 56px;
+  text-align: center;
+  color: #923a3a;
+  padding-bottom: 40px;
+}
+
+.services-column-left {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  height: 312px;
+}
+.services-column-right {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 24px;
+  height: 312px;
+}
+
+.services-column-left img,
+.services-column-right img {
+  max-width: 486px;
+  height: auto;
+}
+
+.services-p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  text-align: center;
+  color: #fafafa;
+  flex: 1;
+}
+
+/* Contacts */
+/* .contacts-h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 56px;
+  text-align: center;
+  color: #923a3a;
+  margin-top: 56px;
+}
+
+.contacts-p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  color: #923a3a;
+}
+
+.contacts-p2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  text-align: center;
+  color: #fafafa;
+}
+
+.contacts-div {
+  text-align: center;
+}
+
+.container-contacts {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-contacts img {
+  max-width: 100%;
+  height: auto;
+} */
+
+.contacts-h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 56px;
+  text-align: center;
+  color: #923a3a;
+
+  margin-top: 56px;
+}
+.contacts-p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  color: #923a3a;
+  padding-bottom: 24px;
+}
+.contacts-p2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  text-align: center;
+  color: #fafafa;
+}
+.contacts-div {
+  text-align: center;
+}
+.container-contacts {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 48px;
+  height: 48px;
+  font-size: 24px;
+  background-color: #923a3a;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none; /* Спочатку приховано */
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.scroll-to-top:hover {
+  background-color: #b54545;
+}
+
+/* Медіа-запити для планшетів (768px–991px) */
+/* @media (max-width: 991px) {
+  .container {
+    max-width: 750px;
+    padding: 0 12px;
+  }
+
+  .navigation {
+    padding: 12px 0;
+  }
+
+  .nav-link {
+    font-size: 20px;
+  }
+
+  .nav-list {
+    gap: 20px;
+  }
+
+  .revision {
+    padding-right: 50px;
+    font-size: 18px;
+  }
+
+  .logo {
+    max-width: 120px;
+  }
+
+  .button-tel {
+    width: 48px;
+    height: 48px;
+  }
+
+  .firma-title {
+    font-size: 28px;
+    margin: 40px 60px 0 60px;
+  }
+
+  .advantage-title,
+  .price-h2,
+  .services-h2,
+  .contacts-h2 {
+    font-size: 48px;
+    margin-top: 40px;
+  }
+
+  .advantage-ul {
+    gap: 16px;
+    justify-content: center;
+  }
+
+  .advantage-li {
+    width: 220px;
+    height: 180px;
+    font-size: 20px;
+    padding: 12px;
+  }
+
+  .price-h3 {
+    font-size: 28px;
+    padding-top: 32px;
+  }
+
+  .price-h4,
+  .price-h5,
+  .price-doc,
+  .services-p,
+  .contacts-p,
+  .contacts-p2 {
+    font-size: 20px;
+  }
+
+  .price-doc {
+    width: 100%;
+    padding: 24px 50px;
+  }
+
+  .services {
+    padding: 24px 50px 0 50px;
+  }
+
+  .services-column-left,
+  .services-column-right {
+    height: 250px;
+    gap: 16px;
+  }
+
+  .services-column-left img,
+  .services-column-right img {
+    max-width: 350px;
+  }
+
+  .container-contacts {
+    padding-top: 32px;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  th {
+    font-size: 18px;
+  }
+
+  td {
+    font-size: 16px;
+    padding: 8px;
+  }
+} */
+
+/* Медіа-запити для мобільних (до 767px) */
+@media (max-width: 767px) {
+  .container {
+    max-width: 100%;
+    padding: 0 8px;
+  }
+
+  .navigation {
+    flex-direction: column;
+    gap: 16px;
+    padding: 8px 0;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .logo {
+    max-width: 116px;
+    margin: 0 auto;
+  }
+
+  .revision {
+    padding-right: 0;
+    justify-content: center;
+    font-size: 16px;
+  }
+
+  .button-tel {
+    width: 40px;
+    height: 40px;
+  }
+
+  .firma-title {
+    font-size: 24px;
+    margin: 32px 20px 0 20px;
+  }
+
+  .advantage-title,
+  .price-h2,
+  .services-h2,
+  .contacts-h2 {
+    font-size: 36px;
+    margin-top: 32px;
+  }
+
+  .advantage-ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding-top: 24px;
+  }
+
+  .advantage-li {
+    width: 100%;
+    max-width: 300px;
+    height: 150px;
+    font-size: 18px;
+    padding: 8px;
+  }
+
+  .price-h3 {
+    font-size: 24px;
+    padding-top: 24px;
+  }
+
+  .price-h4,
+  .price-h5,
+  .price-doc,
+  .services-p,
+  .contacts-p,
+  .contacts-p2 {
+    font-size: 18px;
+  }
+
+  .price-doc {
+    padding: 16px 20px;
+  }
+
+  .services {
+    padding: 16px 20px 0 20px;
+  }
+
+  .services-column-left {
+    flex-direction: column;
+    height: auto;
+    gap: 12px;
+  }
+  .services-column-right {
+    flex-direction: column;
+    height: auto;
+    gap: 12px;
+  }
+
+  .services-column-left img,
+  .services-column-right img {
+    max-width: 100%;
+  }
+
+  .container-contacts {
+    padding-top: 24px;
+  }
+
+  th,
+  td {
+    font-size: 14px;
+    padding: 6px;
+  }
+
+  table {
+    font-size: 14px;
+  }
 }
