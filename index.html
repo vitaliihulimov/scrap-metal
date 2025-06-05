@@ -23,15 +23,13 @@
       <div class="container">
         <nav class="navigation">
           <img src="./img/photo_logo.png" alt="Логотип" class="logo" />
-          <p class="revision">Переглядів: <span id="viewCount">0</span></p>
 
-          <script>
-            // Отримуємо поточну кількість переглядів із localStorage
-            let views = localStorage.getItem('pageViews') || 0;
-            views = parseInt(views) + 1; // Збільшуємо лічильник
-            localStorage.setItem('pageViews', views); // Зберігаємо нове значення
-            document.getElementById('viewCount').textContent = views; // Відображаємо
-          </script>
+          <button class="burger" id="burger-btn" aria-label="Меню">
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+          </button>
+
           <ul class="nav-list">
             <li class="nav-li">
               <a href="tel:+380930029430">
@@ -43,7 +41,6 @@
               </a>
             </li>
             <li class="nav-li"><a class="nav-link" href="#home">Головна</a></li>
-
             <li class="nav-li"><a class="nav-link" href="#prices">Ціни</a></li>
             <li class="nav-li">
               <a class="nav-link" href="#services">Послуги</a>
@@ -58,6 +55,13 @@
 
     <!-- Main Title -->
     <section id="home" class="main-title">
+      <p class="revision">Переглядів: <span id="viewCount">0</span></p>
+      <script>
+        let views = localStorage.getItem('pageViews') || 0;
+        views = parseInt(views) + 1;
+        localStorage.setItem('pageViews', views);
+        document.getElementById('viewCount').textContent = views;
+      </script>
       <div class="container">
         <h1 class="firma-title">
           Наша компанія спеціалізується на купівлі чорного та кольорових металів
@@ -221,7 +225,6 @@
           <p class="services-p">Прийом вторинної сировини</p>
         </div>
         <div class="services-column-right">
-          
           <img
             src="./img/Rectangle_3_(1)-min.png"
             alt=""
@@ -240,7 +243,6 @@
           <p class="services-p">Спектральний аналіз складу металу</p>
         </div>
         <div class="services-column-right">
-          
           <img
             src="./img/Rectangle_3_(3)-min.png"
             alt=""
@@ -255,47 +257,53 @@
     <!-- Contacts -->
     <section id="contacts" class="contacts">
       <h2 class="contacts-h2">Контакти</h2>
-      <div class="container container-contacts">
-        <div class="contacts-list">
-          <div class="contacts-div">
-            <p class="contacts-p">Телефон:</p>
-            <p class="contacts-p2">
-              <a href="tel:+380930029430">+38(093)0029430</a>
-            </p>
-          </div>
+      <div class="container">
+        <div class="container-contacts">
+          <p class="contacts-p">Телефон:</p>
+          <p class="contacts-p2">
+            <a href="tel:+380930029430">+38(093)0029430</a>
+          </p>
 
-          <div class="contacts-div">
-            <p class="contacts-p">Email:</p>
-            <p class="contacts-p2">
-              <a href="mailto:zpmetallolom@gmail.com">zpmetallolom@gmail.com</a>
-            </p>
-          </div>
-        </div>
-        
-          <div class="contacts-div">
-            <p class="contacts-p">Адреса:</p>
-            <p class="contacts-p2">
-              <a
-                href="https://www.google.com/maps/place/Sdat%CA%B9+Metallolom/@47.8524509,35.2267101,17.99z/data=!4m14!1m7!3m6!1s0x40dc5d74308c5923:0xb9bce33996eb2bcd!2z0JrQvtC-0L_QtdGA0LDRgtC40LIg0JrRgNC40YHRgtCw0Ls!8m2!3d47.852433!4d35.228134!16s%2Fg%2F11gb3pcc7j!3m5!1s0x40dc5de83a660391:0x63d4609dd636ab4a!8m2!3d47.852646!4d35.2275807!16s%2Fg%2F11j2wlcc04!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDUyNi4wIKXMDSoASAFQAw%3D%3D"
-                target="_blank"
-              >
-                Україна,<br />
-                м. Запоріжжя,<br />
-                Шевченківський м-н,<br />
-                вул. Полякова 12-А,<br />
-                гаражний кооператив «Кристал»
-              </a>
-            </p>
-          </div>
-          <div class="contacts-div">
-            <p class="contacts-p">Графік роботи:</p>
-            <p class="contacts-p2">пн-нд: 08:00 - 18:00</p>
-          </div>
+          <p class="contacts-p">Email:</p>
+          <p class="contacts-p2">
+            <a href="mailto:zpmetallolom@gmail.com">zpmetallolom@gmail.com</a>
+          </p>
+
+          <p class="contacts-p">Адреса:</p>
+          <p class="contacts-p2">
+            <a
+              href="https://www.google.com/maps/place/Sdat%CA%B9+Metallolom/@47.8524509,35.2267101,17.99z/data=!4m14!1m7!3m6!1s0x40dc5d74308c5923:0xb9bce33996eb2bcd!2z0JrQvtC-0L_QtdGA0LDRgtC40LIg0JrRgNC40YHRgtCw0Ls!8m2!3d47.852433!4d35.228134!16s%2Fg%2F11gb3pcc7j!3m5!1s0x40dc5de83a660391:0x63d4609dd636ab4a!8m2!3d47.852646!4d35.2275807!16s%2Fg%2F11j2wlcc04!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDUyNi4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+            >
+              Україна,<br />
+              м. Запоріжжя,<br />
+              Шевченківський м-н,<br />
+              вул. Полякова 12-А,<br />
+              гаражний кооператив «Кристал»
+            </a>
+          </p>
+
+          <p class="contacts-p">Графік роботи:</p>
+          <p class="contacts-p2">пн-нд: 08:00 - 18:00</p>
         </div>
       </div>
     </section>
-    <button class="scroll-to-top" id="scrollToTopBtn" aria-label="Повернутись нагору">
-        ↑
-      </button>
+    <script>
+      const burger = document.getElementById('burger-btn');
+      const navList = document.querySelector('.nav-list');
+      const navLinks = document.querySelectorAll('.nav-link');
+
+      burger.addEventListener('click', () => {
+        navList.classList.toggle('active');
+        burger.classList.toggle('open');
+      });
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          navList.classList.remove('active');
+          burger.classList.remove('open');
+        });
+      });
+    </script>
   </body>
 </html>
