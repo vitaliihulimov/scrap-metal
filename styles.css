@@ -464,7 +464,11 @@ td {
 
   .nav-list.active {
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
   }
 
   .burger {
