@@ -3,7 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>zpmetallolom</title>
+    <meta
+      name="description"
+      content="Прийом металобрухту в Запоріжжі: вигідні ціни на чорний та кольоровий метал, швидкий вивіз, спектральний аналіз. Телефонуйте!"
+    />
+    <title>
+      Прийом металобрухту в Запоріжжі – Вигідні ціни та швидкий вивіз
+    </title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -220,7 +226,7 @@
         <div class="services-column-left">
           <img
             src="./img/Rectangle_3-min.png"
-            alt=""
+            alt="Прийом вторинної сировини в Запоріжжі"
             width="486"
             height="312"
           />
@@ -229,7 +235,7 @@
         <div class="services-column-right">
           <img
             src="./img/Rectangle_3_(1)-min.png"
-            alt=""
+            alt="Розвантаження металобрухту в Запоріжжі"
             width="486"
             height="312"
           />
@@ -238,7 +244,7 @@
         <div class="services-column-left">
           <img
             src="./img/Rectangle_3_(2)-min.png"
-            alt=""
+            alt="Спектральний аналіз металобрухту в Запоріжжі"
             width="486"
             height="312"
           />
@@ -247,7 +253,7 @@
         <div class="services-column-right">
           <img
             src="./img/Rectangle_3_(3)-min.png"
-            alt=""
+            alt="Порізка металобрухту в Запоріжжі"
             width="486"
             height="312"
           />
@@ -304,6 +310,23 @@
         link.addEventListener('click', () => {
           navList.classList.remove('active');
           burger.classList.remove('open');
+        });
+      });
+    </script>
+    <button class="scroll-to-top" aria-label="Прокрутити вгору">↑</button>
+    <script>
+      const scrollToTopBtn = document.querySelector('.scroll-to-top');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          scrollToTopBtn.classList.add('visible');
+        } else {
+          scrollToTopBtn.classList.remove('visible');
+        }
+      });
+      scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth',
         });
       });
     </script>
