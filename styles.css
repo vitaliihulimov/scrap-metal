@@ -229,6 +229,7 @@ td {
   text-align: center;
   color: #923a3a;
   padding-bottom: 40px;
+  margin-top: 56px;
 }
 
 .services-column-left {
@@ -237,6 +238,7 @@ td {
   align-items: center;
   gap: 24px;
   min-height: 312px;
+  padding-bottom: 32px;
 }
 .services-column-right {
   display: flex;
@@ -245,6 +247,7 @@ td {
   align-items: center;
   gap: 24px;
   min-height: 312px;
+  padding-bottom: 32px;
 }
 
 .services-column-left img,
@@ -288,6 +291,7 @@ td {
   text-align: center;
 }
 .container-contacts {
+  margin-bottom: 24px;
 }
 
 .map {
