@@ -287,15 +287,12 @@ td {
   font-size: 24px;
   color: #fafafa;
 }
+
 .contacts-div {
   text-align: center;
 }
 .container-contacts {
   margin-bottom: 24px;
-}
-
-.map {
-  display: flex;
 }
 
 /* Медіа-запити для мобільних (до 767px) */
