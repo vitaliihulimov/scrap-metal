@@ -524,3 +524,16 @@ tr:nth-child(even) {
     right: 16px;
   }
 }
+
+.calc {
+  text-align: center;
+  color: #fafafa;
+  padding-bottom: 20px;
+}
+
+.calcvart {
+  text-align: center;
+  color: #fafafa;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}

@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-site-verification" content="huVQdMUORZZk7IueMP6u_f4OmNgXFMdGxFGBUZuAJcs" />
     <meta
       name="description"
       content="Прийом металобрухту в Запоріжжі: вигідні ціни на чорний та кольоровий метал, швидкий вивіз, спектральний аналіз. Телефонуйте!"
     />
     <title>
-      Прийом металобрухту в Запоріжжі – Вигідні ціни та швидкий вивіз
+      Прийом металобрухту в Запоріжжі – Вигідні ціни та швидкий прийом!
     </title>
     <link rel="icon" type="image/x-icon" href="./img/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,6 +24,7 @@
         scroll-behavior: smooth;
       }
     </style>
+   
   </head>
   <body>
     <!-- Header -->
@@ -49,6 +51,7 @@
             </li>
             <li class="nav-li"><a class="nav-link" href="#home">Головна</a></li>
             <li class="nav-li"><a class="nav-link" href="#prices">Ціни</a></li>
+            <li class="nav-li"><a class="nav-link" href="#calculator">Калькулятор</a></li>
             <li class="nav-li">
               <a class="nav-link" href="#services">Послуги</a>
             </li>
@@ -62,18 +65,18 @@
 
     <!-- Main Title -->
     <section id="home" class="main-title">
-      <p class="revision">Переглядів: <span id="viewCount">0</span></p>
-      <script>
-        let views = localStorage.getItem('pageViews') || 0;
-        views = parseInt(views) + 1;
-        localStorage.setItem('pageViews', views);
-        document.getElementById('viewCount').textContent = views;
-      </script>
+      <p class="revision">Переглядів: <span id="viewCount">Завантаження...</span></p>
+
+<script>
+  fetch('counter.php')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('viewCount').textContent = data;
+    });
+</script>
       <div class="container">
-        <h1 class="firma-title">
-          Наша компанія спеціалізується на купівлі чорного та кольорових металів
-          за вигідними цінами.
-        </h1>
+        <h1 class="firma-title">Прийом металобрухту в Запоріжжі за вигідними цінами.</h1>
+    
       </div>
     </section>
 
@@ -109,105 +112,232 @@
         updateDate();
       </script>
       <div class="container">
-        <div class="table">
-          <table>
-            <thead>
-              <tr class="name-scrap">
-                <th>Найменування металобрухту</th>
-                <th>Засмічення</th>
-                <th>Ціна за кг, грн</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Мідь</td>
-                <td>-1%</td>
-                <td>340</td>
-              </tr>
-              <tr>
-                <td>Латунь</td>
-                <td>-1%</td>
-                <td>215</td>
-              </tr>
-              <tr>
-                <td>Радіатор латунний</td>
-                <td>-1%</td>
-                <td>215</td>
-              </tr>
-              <tr>
-                <td>Алюміній побутовий</td>
-                <td>-1%</td>
-                <td>57</td>
-              </tr>
-              <tr>
-                <td>Алюміній ел-тех</td>
-                <td>-1%</td>
-                <td>94</td>
-              </tr>
-              <tr>
-                <td>Нержавіюча сталь</td>
-                <td>-1%</td>
-                <td>50</td>
-              </tr>
-              <tr>
-                <td>Нержавіюча сталь 8%</td>
-                <td>-1%</td>
-                <td>40</td>
-              </tr>
-              <tr>
-                <td>Магній</td>
-                <td>-1%</td>
-                <td>28</td>
-              </tr>
-              <tr>
-                <td>ЦАМ</td>
-                <td>-1%</td>
-                <td>55</td>
-              </tr>
-              <tr>
-                <td>Стружка міді</td>
-                <td>-1%</td>
-                <td>300</td>
-              </tr>
-              <tr>
-                <td>Стружка латунь</td>
-                <td>-1%</td>
-                <td>207</td>
-              </tr>
-              <tr>
-                <td>Свинец</td>
-                <td></td>
-                <td>65/63</td>
-              </tr>
-              <tr>
-                <td>Акумулятори</td>
-                <td>-2%</td>
-                <td>11/24</td>
-              </tr>
-              <tr>
-                <td>ТНЖ</td>
-                <td></td>
-                <td>25/28</td>
-              </tr>
-              <tr>
-                <td>Титан</td>
-                <td></td>
-                <td>90</td>
-              </tr>
-              <tr>
-                <td>%</td>
-                <td></td>
-                <td>4200</td>
-              </tr>
-              <tr>
-                <td>Чорний лом</td>
-                <td>-3%</td>
-                <td>6</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <div id="dynamic-prices" class="table">
+          </div>
       </div>
+
+
+
+
+      <section id="calculator" class="calculator">
+  <div class="container">
+    <h2 style=" text-align: center;
+  color: #fafafa;
+  padding-bottom: 20px;">Калькулятор вартості з кошиком</h2>
+
+    <label for="metal-type" style=" text-align: center;
+  color: #fafafa;
+  padding-bottom: 20px;">Оберіть метал:</label>
+    <select id="metal-type">
+      <option value="" disabled selected>Оберіть...</option>
+      <option value="Мідь">Мідь</option>
+      <option value="Латунь">Латунь</option>
+      <option value="Радіатор латунний">Радіатор латунний</option>
+      <option value="Алюміній побутовий">Алюміній побутовий</option>
+      <option value="Алюміній електротехнічний">Алюміній електротехнічний</option>
+      <option value="Нержавіюча сталь">Нержавіюча сталь</option>
+      <option value="Нержавіюча сталь (8% нікелю)">Нержавіюча сталь (8% нікелю)</option>
+      <option value="Магній">Магній</option>
+      <option value="ЦАМ (цинк-алюміній-магній)">ЦАМ (цинк-алюміній-магній)</option>
+      <option value="Стружка мідна">Стружка мідна</option>
+      <option value="Стружка латунна">Стружка латунна</option>
+      <option value="Свинець">Свинець</option>
+      <option value="Свинець кабельний">Свинець кабельний</option>
+      <option value="Акумулятор білий">Акумулятор білий</option>
+      <option value="Акумулятор чорний">Акумулятор чорний</option>
+      <option value="ТНЖ великі">ТНЖ великі</option>
+      <option value="ТНЖ маленькі">ТНЖ маленькі</option>
+      <option value="Титан">Титан</option>
+      <option value="Високолегована сталь 18-99% Ni">Високолегована сталь 18-99% Ni</option>
+      <option value="Чорний металобрухт">Чорний металобрухт</option>
+    </select>
+
+    <label for="weight" style=" text-align: center;
+  color: #fafafa;
+  padding-bottom: 20px;">Введіть вагу (кг):</label>
+    <input type="number" id="weight" placeholder="Напр. 10" min="0" step="0.01" />
+
+    <button id="add-to-cart-btn" style="background-color: #484b4d;">Додати в кошик</button>
+    <button id="clear-cart-btn" style="background-color: #d9534f; color: white; margin-left: 10px;">Очистити все</button>
+
+    <h3 style=" text-align: center;
+  color: #fafafa;
+  padding-bottom: 20px;">Кошик:</h3>
+    <div style="overflow-x:auto;">
+      <table id="cart-table" border="1" cellspacing="0" cellpadding="5" style="width:100%; max-width:100%;">
+        <thead>
+          <tr>
+            <th>Метал</th>
+            <th>Вага (кг)</th>
+            <th>Ціна за кг</th>
+            <th>Засмічення</th>
+            <th>Вартість (грн)</th>
+            <th>Дія</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <p style=" text-align: center;
+  color: #fafafa;
+  padding-bottom: 50px;
+  padding-top: 20px;"><strong>Загальна вартість: <span id="total-price">0</span> грн</strong></p>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 600px) {
+    .calculator label,
+    .calculator select,
+    .calculator input,
+    .calculator button,
+    .calculator p {
+      width: 100%;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    #cart-table th, #cart-table td {
+      font-size: 14px;
+      padding: 4px;
+    }
+
+    #clear-cart-btn, #add-to-cart-btn {
+      width: 100%;
+      margin-top: 5px;
+      margin-left: 0 !important;
+    }
+  }
+
+  .calculator button {
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background-color: #d9534f;
+    color: white;
+  }
+
+  .calculator {
+    margin-top: 40px;
+  }
+</style>
+
+<script>
+  const priceMap = {
+    "Мідь": { price: 345, waste: 1 },
+    "Латунь": { price: 218, waste: 1 },
+    "Радіатор латунний": { price: 217, waste: 2 },
+    "Алюміній побутовий": { price: 58, waste: 1 },
+    "Алюміній електротехнічний": { price: 95, waste: 1 },
+    "Нержавіюча сталь": { price: 46, waste: 0.5 },
+    "Нержавіюча сталь (8% нікелю)": { price: 36, waste: 0.5 },
+    "Магній": { price: 31, waste: 3 },
+    "ЦАМ (цинк-алюміній-магній)": { price: 58, waste: 3 },
+    "Стружка мідна": { price: 308, waste: 1 },
+    "Стружка латунна": { price: 210, waste: 1 },
+    "Свинець": { price: 64, waste: 1 },
+    "Свинець кабельний": { price: 66, waste: 1 },
+    "Акумулятор білий": { price: 24, waste: 1 },
+    "Акумулятор чорний": { price: 18, waste: 1 },
+    "ТНЖ великі": { price: 25, waste: 3 },
+    "ТНЖ маленькі": { price: 23, waste: 3 },
+    "Титан": { price: 93, waste: 0 },
+    "Високолегована сталь 18-99% Ni": { price: 4100, waste: 0 },
+    "Чорний металобрухт": { price: 5, waste: 3 }
+  };
+
+  const cart = [];
+
+  function renderCart() {
+    const tbody = document.querySelector("#cart-table tbody");
+    tbody.innerHTML = '';
+    let totalPrice = 0;
+
+    cart.forEach((item, index) => {
+      let cleanedPrice = item.basePrice - (item.basePrice * item.waste / 100);
+      let itemTotal;
+
+      if (item.metal === "Чорний металобрухт") {
+        // Віднімання 3% + округлення вниз до 0.1 (десяткове)
+        cleanedPrice = Math.floor(cleanedPrice * 10) / 10;
+        itemTotal = cleanedPrice * item.weight;
+        itemTotal = Math.round(itemTotal); // Округлення загальної суми до цілого
+      } else {
+        // Для інших металів - округлення вниз до цілого
+        cleanedPrice = Math.floor(cleanedPrice);
+        itemTotal = cleanedPrice * item.weight;
+      }
+
+      totalPrice += itemTotal;
+
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${item.metal}</td>
+        <td>${Math.round(item.weight)}</td>
+        <td>${item.basePrice} грн</td>
+        <td>${item.waste}%</td>
+        <td>${itemTotal}</td>
+        <td><button data-index="${index}" class="remove-btn">✖</button></td>
+      `;
+      tbody.appendChild(row);
+    });
+
+    document.getElementById("total-price").textContent = totalPrice;
+
+    document.querySelectorAll(".remove-btn").forEach(button => {
+      button.addEventListener("click", e => {
+        const index = +e.target.getAttribute("data-index");
+        cart.splice(index, 1);
+        renderCart();
+      });
+    });
+  }
+
+  document.getElementById("add-to-cart-btn").addEventListener("click", () => {
+    const metal = document.getElementById("metal-type").value;
+    const weight = parseFloat(document.getElementById("weight").value);
+
+    if (!metal) return alert("Оберіть метал.");
+    if (isNaN(weight) || weight <= 0) return alert("Введіть правильну вагу.");
+
+    const { price, waste } = priceMap[metal];
+
+    const existing = cart.find(item => item.metal === metal);
+    if (existing) {
+      existing.weight += weight;
+    } else {
+      cart.push({
+        metal,
+        weight,
+        basePrice: price,
+        waste: waste
+      });
+    }
+
+    document.getElementById("weight").value = '';
+    document.getElementById("metal-type").value = '';
+    renderCart();
+  });
+
+  document.getElementById("clear-cart-btn").addEventListener("click", () => {
+    if (confirm("Очистити кошик?")) {
+      cart.length = 0;
+      renderCart();
+    }
+  });
+</script>
+
+      
+      
+      
+      
+      
+      
+      
+      
       <div class="container">
         <h4 class="price-doc">
           Категорично заборонено приймати: <br />
@@ -295,7 +425,14 @@
           </p>
 
           <p class="contacts-p">Графік роботи:</p>
-          <p class="contacts-p2">пн-нд: 08:00 - 18:00</p>
+          <p class="contacts-p2">Пн-Нд: 08:00 - 18:00</p>
+          
+          <p class="contacts-p">
+            <p class="contacts-p2"><a href="https://g.page/r/CUqrNtadYNRjEAE/review"
+              >Залишити відгук</a
+            >
+          </p>
+          </p>
         </div>
       </div>
     </section>
@@ -333,5 +470,81 @@
         });
       });
     </script>
+    <script>
+      const prices = [
+        { name: "Мідь", junk: "-1%", current: 345, previous: 334 },
+        { name: "Латунь", junk: "-1%", current: 218, previous: 215 },
+        { name: "Радіатор латунний", junk: "-2%", current: 217, previous: 214 },
+        { name: "Алюміній побутовий", junk: "-1%", current: 58, previous: 60 },
+        { name: "Алюміній електротехнічний", junk: "-1%", current: 95, previous: 93 },
+        { name: "Нержавіюча сталь", junk: "-0,5%", current: 46, previous: 44 },
+        { name: "Нержавіюча сталь (8% нікелю)", junk: "-0,5%", current: 36, previous: 37 },
+        { name: "Магній", junk: "-3%", current: 31, previous: 30 },
+        { name: "ЦАМ (цинк-алюміній-магній)", junk: "-3%", current: 58, previous: 57 },
+        { name: "Стружка мідна", junk: "-1%", current: 308, previous: 300 },
+        { name: "Стружка латунна", junk: "-1%", current: 210, previous: 205 },
+        { name: "Свинець", junk: "-1%", current: 64, previous: 62 },
+        { name: "Свинець кабельний", junk: "-1%", current: 66, previous: 65 },
+        { name: "Акумулятор білий", junk: "-1%", current: 24, previous: 23 },
+        { name: "Акумулятор чорний", junk: "-1%", current: 18, previous: 17 },
+        { name: "ТНЖ великі", junk: "-3%", current: 25, previous: 24 },
+        { name: "ТНЖ маленькі", junk: "-3%", current: 23, previous: 22 },
+        { name: "Титан", junk: "0%", current: 93, previous: 92 },
+        { name: "Високолегована сталь 18-99% Ni", junk: "0%", current: 4100, previous: 4000 },
+        { name: "Чорний металобрухт", junk: "-3%", current: 5, previous: 4.5 }
+      ];
+    
+      function renderPrices() {
+        const container = document.getElementById("dynamic-prices");
+        const table = document.createElement("table");
+    
+        const thead = document.createElement("thead");
+        thead.innerHTML = `
+          <tr class="name-scrap">
+            <th>Найменування металобрухту</th>
+            <th>Засмічення</th>
+            <th>Ціна за кг, грн</th>
+          </tr>
+        `;
+    
+        const tbody = document.createElement("tbody");
+    
+        prices.forEach(item => {
+          let indicator = "➖";
+          let color = "gray";
+          let rowClass = "price-same";
+    
+          if (item.current > item.previous) {
+            indicator = "▲";
+            color = "green";
+            rowClass = "price-up";
+          } else if (item.current < item.previous) {
+            indicator = "▼";
+            color = "red";
+            rowClass = "price-down";
+          }
+    
+          const row = document.createElement("tr");
+          row.className = rowClass;
+          row.innerHTML = `
+            <td>${item.name}</td>
+            <td>${item.junk}</td>
+            <td>
+              ${item.current}
+              <span style="color:${color}; font-weight:bold; margin-left:5px;">${indicator}</span>
+            </td>
+          `;
+          tbody.appendChild(row);
+        });
+    
+        table.appendChild(thead);
+        table.appendChild(tbody);
+        container.appendChild(table);
+      }
+    
+      renderPrices();
+    </script>
+    
+    
   </body>
 </html>
