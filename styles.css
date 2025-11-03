@@ -228,8 +228,8 @@ td {
   font-size: 56px;
   text-align: center;
   color: #923a3a;
-  padding-bottom: 40px;
-  margin-top: 56px;
+  /* padding-bottom: 40px;
+  margin-top: 56px; */
 }
 
 .services-column-left {
@@ -272,7 +272,7 @@ td {
   text-align: center;
   color: #923a3a;
   padding-bottom: 24px;
-  margin-top: 56px;
+  /* margin-top: 56px; */
 }
 .contacts-p {
   font-family: 'Montserrat', sans-serif;
@@ -337,7 +337,7 @@ td {
   .services-h2,
   .contacts-h2 {
     font-size: 36px;
-    margin-top: 32px;
+    /* margin-top: 32px; */
   }
 
   .advantage-ul {
@@ -394,7 +394,7 @@ td {
   }
 
   .container-contacts {
-    padding-top: 24px;
+    /* padding-top: 24px; */
   }
 
   th,
@@ -550,8 +550,8 @@ tr:nth-child(even) {
   font-size: 56px;
   text-align: center;
   color: #923a3a;
-  padding-bottom: 40px;
-  margin-top: 56px;
+  /* padding-bottom: 40px;
+  margin-top: 56px; */
 }
 
 /* Стилі для свайпера */
@@ -721,7 +721,6 @@ tr:nth-child(even) {
   width: 100%;
   overflow: hidden;
   position: relative;
-  padding: 20px 0;
 }
 
 .running-line {
