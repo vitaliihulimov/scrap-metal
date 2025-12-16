@@ -635,7 +635,96 @@
     typeElements.forEach(el => observers.observe(el));
   </script>
 
+  <canvas id="snow-canvas"></canvas>
 
+  <script>
+    const canvas = document.getElementById('snow-canvas');
+    const ctx = canvas.getContext('2d');
+
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    const numFlakes = 50; // менше сніжинок
+    const flakes = [];
+    const ground = []; // для накопичення сніжинок внизу
+
+    for (let i = 0; i < numFlakes; i++) {
+      flakes.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        r: Math.random() * 4 + 1,       // радіус сніжинки
+        d: Math.random() * numFlakes,
+        tilt: Math.random() * 10,
+        tiltAngleIncremental: Math.random() * 0.05 + 0.01,
+        speed: Math.random() * 1 + 0.5
+      });
+    }
+
+    // малюємо сніг
+    function drawSnow() {
+      ctx.clearRect(0, 0, width, height);
+
+      // малюємо падаючі сніжинки
+      ctx.fillStyle = 'rgba(255,255,255,0.8)';
+      ctx.beginPath();
+      for (let i = 0; i < flakes.length; i++) {
+        const f = flakes[i];
+        ctx.moveTo(f.x, f.y);
+        ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2, true);
+      }
+      ctx.fill();
+
+      // малюємо сніг на «землі»
+      ctx.fillStyle = 'rgba(255,255,255,0.9)';
+      ground.forEach(g => {
+        ctx.beginPath();
+        ctx.arc(g.x, g.y, g.r, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      updateSnow();
+    }
+
+    // оновлення позицій
+    function updateSnow() {
+      for (let i = 0; i < flakes.length; i++) {
+        const f = flakes[i];
+        f.tilt += f.tiltAngleIncremental;
+        f.y += f.speed;
+        f.x += Math.sin(f.tilt) * 1.5;
+
+        // якщо сніжинка досягла низу
+        if (f.y + f.r >= height - 2) {
+          ground.push({ x: f.x, y: height - f.r, r: f.r });
+          resetFlake(f);
+        }
+
+        // якщо сніжинка виходить за бічні межі
+        if (f.x > width) f.x = width;
+        if (f.x < 0) f.x = 0;
+      }
+
+      requestAnimationFrame(drawSnow);
+    }
+
+    // скидання сніжинки наверх
+    function resetFlake(f) {
+      f.x = Math.random() * width;
+      f.y = -10;
+      f.r = Math.random() * 4 + 1;
+      f.speed = Math.random() * 1 + 0.5;
+      f.tilt = Math.random() * 10;
+    }
+
+    // адаптація під розмір вікна
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    });
+
+    drawSnow();
+
+  </script>
 
 </body>
 
