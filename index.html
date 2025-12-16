@@ -22,7 +22,6 @@
       scroll-behavior: smooth;
     }
   </style>
-
 </head>
 
 <body>
@@ -46,7 +45,9 @@
           </li>
           <li class="nav-li"><a class="nav-link" href="#home">Головна</a></li>
           <li class="nav-li"><a class="nav-link" href="#prices">Ціни</a></li>
-          <li class="nav-li"><a class="nav-link" href="#calculator">Калькулятор</a></li>
+          <li class="nav-li">
+            <a class="nav-link" href="#calculator">Калькулятор</a>
+          </li>
           <li class="nav-li">
             <a class="nav-link" href="#services">Послуги</a>
           </li>
@@ -60,7 +61,9 @@
 
   <!-- Main Title -->
   <section id="home" class="main-title">
-    <p class="revision">Переглядів: <span id="viewCount">Завантаження...</span></p>
+    <p class="revision">
+      Переглядів: <span id="viewCount">Завантаження...</span>
+    </p>
 
     <script>
       fetch('counter.php')
@@ -74,33 +77,37 @@
         Прийом металобрухту в Запоріжжі за вигідними цінами.
       </h1>
     </div>
-
   </section>
 
   <!-- Advantages -->
   <section id="advantages" class="advantage section">
     <div class="container">
-      <h2 class="advantage-title animate fade-up">
-        Наші головні переваги
-      </h2>
+      <h2 class="advantage-title animate fade-up">Наші головні переваги</h2>
 
       <div class="advantage-list animate fade-up delay-2">
         <div class="inner">
-          <div class="advantage-item">Надійний партнер з викупу чорних та кольорових металів</div>
+          <div class="advantage-item">
+            Надійний партнер з викупу чорних та кольорових металів
+          </div>
           <div class="advantage-item">Швидкий та вигідний викуп</div>
-          <div class="advantage-item">Прийом металобрухту за найкращими цінами</div>
+          <div class="advantage-item">
+            Прийом металобрухту за найкращими цінами
+          </div>
           <div class="advantage-item">Ми купуємо - Ви заробляєте</div>
 
-          <div class="advantage-item">Надійний партнер з викупу чорних та кольорових металів</div>
+          <div class="advantage-item">
+            Надійний партнер з викупу чорних та кольорових металів
+          </div>
           <div class="advantage-item">Швидкий та вигідний викуп</div>
-          <div class="advantage-item">Прийом металобрухту за найкращими цінами</div>
+          <div class="advantage-item">
+            Прийом металобрухту за найкращими цінами
+          </div>
           <div class="advantage-item">Ми купуємо - Ви заробляєте</div>
         </div>
         <div class="fade"></div>
       </div>
     </div>
   </section>
-
 
   <!-- Prices -->
   <section id="prices" class="price">
@@ -119,33 +126,33 @@
       updateDate();
     </script>
     <div class="container">
-      <div id="dynamic-prices" class="table">
-      </div>
+      <div id="dynamic-prices" class="table"></div>
     </div>
-
-
-
 
     <section id=" calculator" class="calculator">
       <div class="container">
-        <h2 style=" text-align: center;
-  color: #fafafa;
-  padding-bottom: 20px;">Калькулятор вартості з кошиком</h2>
+        <h2 style="text-align: center; color: #fafafa; padding-bottom: 20px">
+          Калькулятор вартості з кошиком
+        </h2>
 
-        <label for="metal-type" style=" text-align: center;
-  color: #fafafa;
-  padding-bottom: 20px;">Оберіть метал:</label>
+        <label for="metal-type" style="text-align: center; color: #fafafa; padding-bottom: 20px">Оберіть метал:</label>
         <select id="metal-type">
           <option value="" disabled selected>Оберіть...</option>
           <option value="Мідь">Мідь</option>
           <option value="Латунь">Латунь</option>
           <option value="Радіатор латунний">Радіатор латунний</option>
           <option value="Алюміній побутовий">Алюміній побутовий</option>
-          <option value="Алюміній електротехнічний">Алюміній електротехнічний</option>
+          <option value="Алюміній електротехнічний">
+            Алюміній електротехнічний
+          </option>
           <option value="Нержавіюча сталь">Нержавіюча сталь</option>
-          <option value="Нержавіюча сталь (8% нікелю)">Нержавіюча сталь (8% нікелю)</option>
+          <option value="Нержавіюча сталь (8% нікелю)">
+            Нержавіюча сталь (8% нікелю)
+          </option>
           <option value="Магній">Магній</option>
-          <option value="ЦАМ (цинк-алюміній-магній)">ЦАМ (цинк-алюміній-магній)</option>
+          <option value="ЦАМ (цинк-алюміній-магній)">
+            ЦАМ (цинк-алюміній-магній)
+          </option>
           <option value="Стружка мідна">Стружка мідна</option>
           <option value="Стружка латунна">Стружка латунна</option>
           <option value="Свинець">Свинець</option>
@@ -155,24 +162,27 @@
           <option value="ТНЖ великі">ТНЖ великі</option>
           <option value="ТНЖ маленькі">ТНЖ маленькі</option>
           <option value="Титан">Титан</option>
-          <option value="Високолегована сталь 18-99% Ni">Високолегована сталь 18-99% Ni</option>
+          <option value="Високолегована сталь 18-99% Ni">
+            Високолегована сталь 18-99% Ni
+          </option>
           <option value="Чорний металобрухт">Чорний металобрухт</option>
         </select>
 
-        <label for="weight" style=" text-align: center;
-  color: #fafafa;
-  padding-bottom: 20px;">Введіть вагу (кг):</label>
+        <label for="weight" style="text-align: center; color: #fafafa; padding-bottom: 20px">Введіть вагу (кг):</label>
         <input type="number" id="weight" placeholder="Напр. 10" min="0" step="0.01" />
 
-        <button id="add-to-cart-btn" style="background-color: #484b4d;">Додати в кошик</button>
-        <button id="clear-cart-btn" style="background-color: #d9534f; color: white; margin-left: 10px;">Очистити
-          все</button>
+        <button id="add-to-cart-btn" style="background-color: #484b4d">
+          Додати в кошик
+        </button>
+        <button id="clear-cart-btn" style="background-color: #d9534f; color: white; margin-left: 10px">
+          Очистити все
+        </button>
 
-        <h3 style=" text-align: center;
-  color: #fafafa;
-  padding-bottom: 20px;">Кошик:</h3>
-        <div style="overflow-x:auto;">
-          <table id="cart-table" border="1" cellspacing="0" cellpadding="5" style="width:100%; max-width:100%;">
+        <h3 style="text-align: center; color: #fafafa; padding-bottom: 20px">
+          Кошик:
+        </h3>
+        <div style="overflow-x: auto">
+          <table id="cart-table" border="1" cellspacing="0" cellpadding="5" style="width: 100%; max-width: 100%">
             <thead>
               <tr>
                 <th>Метал</th>
@@ -187,10 +197,14 @@
           </table>
         </div>
 
-        <p style=" text-align: center;
-  color: #fafafa;
-  padding-bottom: 50px;
-  padding-top: 20px;"><strong>Орієнтовна вартість: <span id="total-price">0</span> грн</strong></p>
+        <p style="
+              text-align: center;
+              color: #fafafa;
+              padding-bottom: 50px;
+              padding-top: 20px;
+            ">
+          <strong>Орієнтовна вартість: <span id="total-price">0</span> грн</strong>
+        </p>
       </div>
     </section>
 
@@ -238,40 +252,41 @@
 
     <script>
       const priceMap = {
-        "Мідь": { price: 360, waste: 1 },
-        "Латунь": { price: 230, waste: 1 },
-        "Радіатор латунний": { price: 230, waste: 2 },
-        "Алюміній побутовий": { price: 64, waste: 1 },
-        "Алюміній електротехнічний": { price: 92, waste: 1 },
-        "Нержавіюча сталь": { price: 43, waste: 0.5 },
-        "Нержавіюча сталь (8% нікелю)": { price: 35, waste: 0.5 },
-        "Магній": { price: 32, waste: 3 },
-        "ЦАМ (цинк-алюміній-магній)": { price: 58, waste: 3 },
-        "Стружка мідна": { price: 322, waste: 1 },
-        "Стружка латунна": { price: 222, waste: 3 },
-        "Свинець": { price: 64, waste: 1 },
-        "Свинець кабельний": { price: 66, waste: 1 },
-        "Акумулятор білий": { price: 23, waste: 1 },
-        "Акумулятор чорний": { price: 17, waste: 1 },
-        "ТНЖ великі": { price: 20, waste: 3 },
-        "ТНЖ маленькі": { price: 18, waste: 3 },
-        "Титан": { price: 88, waste: 0.5 },
-        "Високолегована сталь 18-99% Ni": { price: 4100, waste: 0 },
-        "Чорний металобрухт": { price: 6.2, waste: 0 }
+        Мідь: { price: 360, waste: 1 },
+        Латунь: { price: 230, waste: 1 },
+        'Радіатор латунний': { price: 230, waste: 2 },
+        'Алюміній побутовий': { price: 64, waste: 1 },
+        'Алюміній електротехнічний': { price: 92, waste: 1 },
+        'Нержавіюча сталь': { price: 43, waste: 0.5 },
+        'Нержавіюча сталь (8% нікелю)': { price: 35, waste: 0.5 },
+        Магній: { price: 32, waste: 3 },
+        'ЦАМ (цинк-алюміній-магній)': { price: 58, waste: 3 },
+        'Стружка мідна': { price: 322, waste: 1 },
+        'Стружка латунна': { price: 222, waste: 3 },
+        Свинець: { price: 64, waste: 1 },
+        'Свинець кабельний': { price: 66, waste: 1 },
+        'Акумулятор білий': { price: 23, waste: 1 },
+        'Акумулятор чорний': { price: 17, waste: 1 },
+        'ТНЖ великі': { price: 20, waste: 3 },
+        'ТНЖ маленькі': { price: 18, waste: 3 },
+        Титан: { price: 88, waste: 0.5 },
+        'Високолегована сталь 18-99% Ni': { price: 4100, waste: 0 },
+        'Чорний металобрухт': { price: 6.2, waste: 0 },
       };
 
       const cart = [];
 
       function renderCart() {
-        const tbody = document.querySelector("#cart-table tbody");
+        const tbody = document.querySelector('#cart-table tbody');
         tbody.innerHTML = '';
         let totalPrice = 0;
 
         cart.forEach((item, index) => {
-          let cleanedPrice = item.basePrice - (item.basePrice * item.waste / 100);
+          let cleanedPrice =
+            item.basePrice - (item.basePrice * item.waste) / 100;
           let itemTotal;
 
-          if (item.metal === "Чорний металобрухт") {
+          if (item.metal === 'Чорний металобрухт') {
             // Віднімання 3% + округлення вниз до 0.1 (десяткове)
             cleanedPrice = Math.floor(cleanedPrice * 10) / 10;
             itemTotal = cleanedPrice * item.weight;
@@ -296,58 +311,55 @@
           tbody.appendChild(row);
         });
 
-        document.getElementById("total-price").textContent = totalPrice;
+        document.getElementById('total-price').textContent = totalPrice;
 
-        document.querySelectorAll(".remove-btn").forEach(button => {
-          button.addEventListener("click", e => {
-            const index = +e.target.getAttribute("data-index");
+        document.querySelectorAll('.remove-btn').forEach(button => {
+          button.addEventListener('click', e => {
+            const index = +e.target.getAttribute('data-index');
             cart.splice(index, 1);
             renderCart();
           });
         });
       }
 
-      document.getElementById("add-to-cart-btn").addEventListener("click", () => {
-        const metal = document.getElementById("metal-type").value;
-        const weight = parseFloat(document.getElementById("weight").value);
+      document
+        .getElementById('add-to-cart-btn')
+        .addEventListener('click', () => {
+          const metal = document.getElementById('metal-type').value;
+          const weight = parseFloat(document.getElementById('weight').value);
 
-        if (!metal) return alert("Оберіть метал.");
-        if (isNaN(weight) || weight <= 0) return alert("Введіть правильну вагу.");
+          if (!metal) return alert('Оберіть метал.');
+          if (isNaN(weight) || weight <= 0)
+            return alert('Введіть правильну вагу.');
 
-        const { price, waste } = priceMap[metal];
+          const { price, waste } = priceMap[metal];
 
-        const existing = cart.find(item => item.metal === metal);
-        if (existing) {
-          existing.weight += weight;
-        } else {
-          cart.push({
-            metal,
-            weight,
-            basePrice: price,
-            waste: waste
-          });
-        }
+          const existing = cart.find(item => item.metal === metal);
+          if (existing) {
+            existing.weight += weight;
+          } else {
+            cart.push({
+              metal,
+              weight,
+              basePrice: price,
+              waste: waste,
+            });
+          }
 
-        document.getElementById("weight").value = '';
-        document.getElementById("metal-type").value = '';
-        renderCart();
-      });
-
-      document.getElementById("clear-cart-btn").addEventListener("click", () => {
-        if (confirm("Очистити кошик?")) {
-          cart.length = 0;
+          document.getElementById('weight').value = '';
+          document.getElementById('metal-type').value = '';
           renderCart();
-        }
-      });
+        });
+
+      document
+        .getElementById('clear-cart-btn')
+        .addEventListener('click', () => {
+          if (confirm('Очистити кошик?')) {
+            cart.length = 0;
+            renderCart();
+          }
+        });
     </script>
-
-
-
-
-
-
-
-
 
     <div class="container">
       <h4 class="price-doc animate zoom-center">
@@ -359,7 +371,6 @@
         На території здійснюється відеоспостереження.
       </h4>
     </div>
-
   </section>
 
   <!-- Services -->
@@ -406,7 +417,6 @@
         </div>
         <div class="fade"></div>
       </div>
-
     </div>
   </section>
 
@@ -416,7 +426,6 @@
 
     <div class="container">
       <div class="contacts-grid">
-
         <div class="contact-item">
           <span class="contact-label">Телефон:</span>
           <a href="tel:+380930029430" class="contact-value">
@@ -433,20 +442,19 @@
 
         <div class="contact-item">
           <span class="contact-label">Адреса:</span>
-          <a href="https://www.google.com/maps/place/Sdat%CA%B9+Metallolom/..." target="_blank" class="contact-value">
-            Україна,<br>
-            м. Запоріжжя,<br>
-            Шевченківський м-н,<br>
-            вул. Полякова 12-А,<br>
+          <a href="https://www.google.com/maps/place/Zdaty+Metalobrukht/@47.8521676,35.2272351,154m/data=!3m1!1e3!4m6!3m5!1s0x40dc5de83a660391:0x63d4609dd636ab4a!8m2!3d47.852646!4d35.2275807!16s%2Fg%2F11j2wlcc04?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D"
+            target="_blank" class="contact-value">
+            Україна,<br />
+            м. Запоріжжя,<br />
+            Шевченківський м-н,<br />
+            вул. Полякова 12-А,<br />
             ГК «Кристал»
           </a>
         </div>
 
         <div class="contact-item">
           <span class="contact-label">Графік роботи:</span>
-          <span class="contact-value">
-            Пн–Нд: 08:00 – 18:00
-          </span>
+          <span class="contact-value"> Пн–Нд: 08:00 – 18:00 </span>
         </div>
 
         <div class="contact-item">
@@ -455,7 +463,6 @@
             Залишити відгук
           </a>
         </div>
-
       </div>
     </div>
   </section>
@@ -496,34 +503,54 @@
   </script>
   <script>
     const prices = [
-      { name: "Мідь", junk: "-1%", current: 360, previous: 358 },
-      { name: "Латунь", junk: "-1%", current: 230, previous: 229 },
-      { name: "Радіатор латунний", junk: "-2%", current: 230, previous: 229 },
-      { name: "Алюміній побутовий", junk: "-1%", current: 64, previous: 64 },
-      { name: "Алюміній електротехнічний", junk: "-1%", current: 92, previous: 92 },
-      { name: "Нержавіюча сталь", junk: "-0,5%", current: 43, previous: 43 },
-      { name: "Нержавіюча сталь (8% нікелю)", junk: "-0,5%", current: 35, previous: 35 },
-      { name: "Магній", junk: "-3%", current: 32, previous: 32 },
-      { name: "ЦАМ (цинк-алюміній-магній)", junk: "-3%", current: 58, previous: 58 },
-      { name: "Стружка мідна", junk: "-1%", current: 322, previous: 320 },
-      { name: "Стружка латунна", junk: "-1%", current: 222, previous: 220 },
-      { name: "Свинець", junk: "-1%", current: 64, previous: 64 },
-      { name: "Свинець кабельний", junk: "-1%", current: 66, previous: 66 },
-      { name: "Акумулятор білий", junk: "-1%", current: 23, previous: 23 },
-      { name: "Акумулятор чорний", junk: "-1%", current: 17, previous: 17 },
-      { name: "ТНЖ великі", junk: "-3%", current: 20, previous: 20 },
-      { name: "ТНЖ маленькі", junk: "-3%", current: 18, previous: 18 },
-      { name: "Титан", junk: "-0.5%", current: 88, previous: 90 },
-      { name: "Високолегована сталь 18-99% Ni", junk: "0%", current: 4100, previous: 4100 },
-      { name: "Чорний металобрухт", junk: "0%", current: 6.2, previous: 6.2 }
+      { name: 'Мідь', junk: '-1%', current: 360, previous: 358 },
+      { name: 'Латунь', junk: '-1%', current: 230, previous: 229 },
+      { name: 'Радіатор латунний', junk: '-2%', current: 230, previous: 229 },
+      { name: 'Алюміній побутовий', junk: '-1%', current: 64, previous: 64 },
+      {
+        name: 'Алюміній електротехнічний',
+        junk: '-1%',
+        current: 92,
+        previous: 92,
+      },
+      { name: 'Нержавіюча сталь', junk: '-0,5%', current: 43, previous: 43 },
+      {
+        name: 'Нержавіюча сталь (8% нікелю)',
+        junk: '-0,5%',
+        current: 35,
+        previous: 35,
+      },
+      { name: 'Магній', junk: '-3%', current: 32, previous: 32 },
+      {
+        name: 'ЦАМ (цинк-алюміній-магній)',
+        junk: '-3%',
+        current: 58,
+        previous: 58,
+      },
+      { name: 'Стружка мідна', junk: '-1%', current: 322, previous: 320 },
+      { name: 'Стружка латунна', junk: '-1%', current: 222, previous: 220 },
+      { name: 'Свинець', junk: '-1%', current: 64, previous: 64 },
+      { name: 'Свинець кабельний', junk: '-1%', current: 66, previous: 66 },
+      { name: 'Акумулятор білий', junk: '-1%', current: 23, previous: 23 },
+      { name: 'Акумулятор чорний', junk: '-1%', current: 17, previous: 17 },
+      { name: 'ТНЖ великі', junk: '-3%', current: 20, previous: 20 },
+      { name: 'ТНЖ маленькі', junk: '-3%', current: 18, previous: 18 },
+      { name: 'Титан', junk: '-0.5%', current: 88, previous: 90 },
+      {
+        name: 'Високолегована сталь 18-99% Ni',
+        junk: '0%',
+        current: 4100,
+        previous: 4100,
+      },
+      { name: 'Чорний металобрухт', junk: '0%', current: 6.2, previous: 6.2 },
     ];
 
     function renderPrices() {
-      const container = document.getElementById("dynamic-prices");
-      const table = document.createElement("table");
+      const container = document.getElementById('dynamic-prices');
+      const table = document.createElement('table');
 
       // Заголовки
-      const thead = document.createElement("thead");
+      const thead = document.createElement('thead');
       thead.innerHTML = `
     <tr>
       <th>Найменування металобрухту</th>
@@ -532,21 +559,21 @@
     </tr>
   `;
 
-      const tbody = document.createElement("tbody");
+      const tbody = document.createElement('tbody');
 
       prices.forEach(item => {
-        let indicator = "➖";
-        let indicatorClass = "";
+        let indicator = '➖';
+        let indicatorClass = '';
 
         if (item.current > item.previous) {
-          indicator = "▲";
-          indicatorClass = "blink-green";
+          indicator = '▲';
+          indicatorClass = 'blink-green';
         } else if (item.current < item.previous) {
-          indicator = "▼";
-          indicatorClass = "blink-red";
+          indicator = '▼';
+          indicatorClass = 'blink-red';
         }
 
-        const row = document.createElement("tr");
+        const row = document.createElement('tr');
         row.innerHTML = `
       <td>${item.name}</td>
       <td>${item.junk}</td>
@@ -560,25 +587,26 @@
       container.appendChild(table);
 
       // Intersection Observer — спрацювання stagger при скролі
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            // Стагер по черзі
-            const rows = table.querySelectorAll("tbody tr");
-            rows.forEach((row, index) => {
-              setTimeout(() => row.classList.add("show"), index * 100);
-            });
-            observer.unobserve(entry.target); // більше не спрацьовує
-          }
-        });
-      }, { threshold: 0.2 }); // спрацьовує, коли 20% таблиці видно
+      const observer = new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              // Стагер по черзі
+              const rows = table.querySelectorAll('tbody tr');
+              rows.forEach((row, index) => {
+                setTimeout(() => row.classList.add('show'), index * 100);
+              });
+              observer.unobserve(entry.target); // більше не спрацьовує
+            }
+          });
+        },
+        { threshold: 0.2 }
+      ); // спрацьовує, коли 20% таблиці видно
 
       observer.observe(table);
     }
 
     renderPrices();
-
-
   </script>
 
   <script>
@@ -592,7 +620,7 @@
         });
       },
       {
-        threshold: 0.2
+        threshold: 0.2,
       }
     );
 
@@ -604,33 +632,36 @@
   <script>
     const typeElements = document.querySelectorAll('.typewriter');
 
-    const observers = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
+    const observers = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
 
-        const el = entry.target;
-        observers.unobserve(el);
+          const el = entry.target;
+          observers.unobserve(el);
 
-        const text = el.textContent.trim();
-        el.textContent = '';
-        el.classList.add('show');
+          const text = el.textContent.trim();
+          el.textContent = '';
+          el.classList.add('show');
 
-        let index = 0;
-        const speed = 45;
+          let index = 0;
+          const speed = 45;
 
-        const type = () => {
-          if (index < text.length) {
-            el.textContent += text.charAt(index);
-            index++;
-            setTimeout(type, speed);
-          } else {
-            el.classList.add('done'); // ⬅ прибираємо курсор
-          }
-        };
+          const type = () => {
+            if (index < text.length) {
+              el.textContent += text.charAt(index);
+              index++;
+              setTimeout(type, speed);
+            } else {
+              el.classList.add('done'); // ⬅ прибираємо курсор
+            }
+          };
 
-        type();
-      });
-    }, { threshold: 0.6 });
+          type();
+        });
+      },
+      { threshold: 0.6 }
+    );
 
     typeElements.forEach(el => observers.observe(el));
   </script>
@@ -641,8 +672,8 @@
     const canvas = document.getElementById('snow-canvas');
     const ctx = canvas.getContext('2d');
 
-    let width = canvas.width = window.innerWidth;
-    let height = canvas.height = window.innerHeight;
+    let width = (canvas.width = window.innerWidth);
+    let height = (canvas.height = window.innerHeight);
 
     const numFlakes = 50; // менше сніжинок
     const flakes = [];
@@ -652,11 +683,11 @@
       flakes.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        r: Math.random() * 4 + 1,       // радіус сніжинки
+        r: Math.random() * 4 + 1, // радіус сніжинки
         d: Math.random() * numFlakes,
         tilt: Math.random() * 10,
         tiltAngleIncremental: Math.random() * 0.05 + 0.01,
-        speed: Math.random() * 1 + 0.5
+        speed: Math.random() * 1 + 0.5,
       });
     }
 
@@ -723,10 +754,7 @@
     });
 
     drawSnow();
-
   </script>
-
 </body>
-
 
 </html>
