@@ -1202,3 +1202,49 @@ tr:nth-child(even) {
   z-index: 9999;
   background: transparent;
 }
+
+@media (max-width: 600px) {
+  .calculator label,
+  .calculator select,
+  .calculator input,
+  .calculator button,
+  .calculator p {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  #cart-table th,
+  #cart-table td {
+    font-size: 14px;
+    padding: 4px;
+  }
+
+  #clear-cart-btn,
+  #add-to-cart-btn {
+    width: 100%;
+    margin-top: 5px;
+    margin-left: 0 !important;
+  }
+}
+
+.calculator button {
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background-color: #d9534f;
+  color: white;
+}
+
+.calculator {
+  margin-top: 40px;
+}
+
+.total-price {
+  text-align: center;
+  color: #fafafa;
+  padding-bottom: 50px;
+  padding-top: 20px;
+}
