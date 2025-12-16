@@ -100,7 +100,7 @@ body {
   font-size: 32px;
   text-align: center;
   color: #fafafa;
-  margin: 56px 120px 0 120px;
+  margin: 56px 0 0 0;
 }
 
 /* Advantages */
@@ -905,4 +905,289 @@ tr:nth-child(even) {
     width: 150px;
     height: 150px;
   }
+}
+
+/* БАЗА */
+.animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  will-change: opacity, transform;
+}
+
+.animate.show {
+  opacity: 1;
+  transform: none;
+}
+
+/* НАПРЯМКИ */
+.fade-up {
+  transform: translateY(40px);
+}
+
+.fade-left {
+  transform: translateX(-40px);
+}
+
+.fade-right {
+  transform: translateX(40px);
+}
+
+/* ЗАТРИМКИ */
+.delay-1 {
+  transition-delay: 0.15s;
+}
+.delay-2 {
+  transition-delay: 0.3s;
+}
+.delay-3 {
+  transition-delay: 0.45s;
+}
+
+.animate {
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  will-change: opacity, transform;
+}
+
+.animate.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.zoom-center {
+  transform-origin: center center;
+}
+
+.typewriter {
+  visibility: hidden;
+  white-space: pre-wrap;
+}
+
+.typewriter.show {
+  visibility: visible;
+}
+
+/* Курсор */
+.typewriter::after {
+  content: '|';
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+.typewriter::after {
+  content: '|';
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 1s infinite;
+}
+
+.typewriter.done::after {
+  content: '';
+  animation: none;
+}
+
+.contacts {
+  padding-bottom: 64px;
+}
+
+@media (max-width: 480px) {
+  .contacts {
+    padding-bottom: 32px;
+  }
+}
+
+.contacts-h2 {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+/* GRID НА FLEX */
+.contacts-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ОДИН РЯДОК */
+.contact-item {
+  flex: 1 1 420px;
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: #fafafa;
+}
+
+/* ЛЕЙБЛ */
+.contact-label {
+  min-width: 140px;
+  font-weight: 600;
+  color: #923a3a;
+}
+
+/* ЗНАЧЕННЯ */
+.contact-value {
+  color: #fafafa;
+  text-decoration: none;
+  line-height: 1.5;
+}
+
+.contact-value:hover {
+  text-decoration: underline;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 767px) {
+  .contact-item {
+    flex-direction: column;
+  }
+
+  .contact-label {
+    min-width: auto;
+  }
+}
+
+.logo {
+  filter: drop-shadow(0 0 8px rgba(146, 58, 58, 0.6))
+    drop-shadow(0 0 16px rgba(146, 58, 58, 0.4));
+  transition: filter 0.3s ease;
+  animation: glow-pulse 2s infinite alternate;
+}
+
+@keyframes glow-pulse {
+  0% {
+    filter: drop-shadow(0 0 4px rgba(146, 58, 58, 0.4))
+      drop-shadow(0 0 12px rgba(146, 58, 58, 0.2));
+  }
+  50% {
+    filter: drop-shadow(0 0 12px rgba(146, 58, 58, 0.8))
+      drop-shadow(0 0 24px rgba(146, 58, 58, 0.6));
+  }
+  100% {
+    filter: drop-shadow(0 0 8px rgba(146, 58, 58, 0.6))
+      drop-shadow(0 0 16px rgba(146, 58, 58, 0.4));
+  }
+}
+
+/* Пульсуюча зелена стрілка */
+@keyframes blink-green {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0.3;
+  }
+}
+
+/* Пульсуюча червона стрілка */
+@keyframes blink-red {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0.3;
+  }
+}
+
+/* Класи для стрілок */
+.blink-green {
+  animation: blink-green 1s infinite;
+  color: green;
+  font-weight: bold;
+}
+
+.blink-red {
+  animation: blink-red 1s infinite;
+  color: red;
+  font-weight: bold;
+}
+
+/* Базовий стан рядка — невидимий і трохи знизу */
+#dynamic-prices tr {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Рядки, які з’являються */
+#dynamic-prices tr.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Можна окремо зробити заголовок завжди видимим */
+#dynamic-prices thead tr {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+#dynamic-prices tr {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#dynamic-prices tr.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Стрілки мерехтять */
+@keyframes blink-green {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0.3;
+  }
+}
+@keyframes blink-red {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0.3;
+  }
+}
+
+.blink-green {
+  animation: blink-green 1s infinite;
+  color: green;
+  font-weight: bold;
+}
+.blink-red {
+  animation: blink-red 1s infinite;
+  color: red;
+  font-weight: bold;
 }
