@@ -156,9 +156,9 @@ scrollToTopBtn.addEventListener('click', () => {
 
 /* Ціни на метали в таблиці */
 const prices = [
-    { name: 'Мідь', junk: '-1%', current: 367, previous: 360 },
-    { name: 'Латунь', junk: '-1%', current: 236, previous: 229 },
-    { name: 'Радіатор латунний', junk: '-2%', current: 235, previous: 229 },
+    { name: 'Мідь', junk: '-1%', current: 371, previous: 367 },
+    { name: 'Латунь', junk: '-1%', current: 236, previous: 236 },
+    { name: 'Радіатор латунний', junk: '-2%', current: 236, previous: 235 },
     { name: 'Алюміній побутовий', junk: '-1%', current: 64, previous: 64 },
     {
         name: 'Алюміній електротехнічний',
@@ -180,22 +180,22 @@ const prices = [
         current: 59,
         previous: 59,
     },
-    { name: 'Стружка мідна', junk: '-1%', current: 329, previous: 320 },
-    { name: 'Стружка латунна', junk: '-1%', current: 228, previous: 220 },
+    { name: 'Стружка мідна', junk: '-1%', current: 329, previous: 329 },
+    { name: 'Стружка латунна', junk: '-1%', current: 228, previous: 228 },
     { name: 'Свинець', junk: '-1%', current: 64, previous: 64 },
     { name: 'Свинець кабельний', junk: '-1%', current: 66, previous: 66 },
-    { name: 'Акумулятор білий', junk: '-1%', current: 23, previous: 23 },
-    { name: 'Акумулятор чорний', junk: '-1%', current: 17, previous: 17 },
-    { name: 'ТНЖ великі', junk: '-3%', current: 20, previous: 20 },
-    { name: 'ТНЖ маленькі', junk: '-3%', current: 18, previous: 18 },
-    { name: 'Титан', junk: '-0.5%', current: 82, previous: 82 },
+    { name: 'Акумулятор білий', junk: '-1%', current: 20, previous: 23 },
+    { name: 'Акумулятор чорний', junk: '-1%', current: 16, previous: 17 },
+    { name: 'ТНЖ великі', junk: '-3%', current: 18, previous: 20 },
+    { name: 'ТНЖ маленькі', junk: '-3%', current: 16, previous: 18 },
+    { name: 'Титан', junk: '-0.5%', current: 80, previous: 82 },
     {
         name: 'Високолегована сталь 18-99% Ni',
         junk: '0%',
-        current: 4100,
+        current: 4000,
         previous: 4100,
     },
-    { name: 'Чорний металобрухт', junk: '0%', current: 5, previous: 6.2 },
+    { name: 'Чорний металобрухт', junk: '0%', current: 5, previous: 5 },
 ];
 
 function renderPrices() {
@@ -226,12 +226,14 @@ function renderPrices() {
             indicatorClass = 'blink-red';
         }
 
+
         const row = document.createElement('tr');
+        row.classList.add('price-row'); // ← ДОДАЛИ
         row.innerHTML = `
-      <td>${item.name}</td>
-      <td>${item.junk}</td>
-      <td>${item.current} <span class="${indicatorClass}">${indicator}</span></td>
-    `;
+  <td class="metal-name" data-metal="${item.name}">${item.name}</td>
+  <td>${item.junk}</td>
+  <td>${item.current} <span class="${indicatorClass}">${indicator}</span></td>
+`;
         tbody.appendChild(row);
     });
 
@@ -402,3 +404,55 @@ window.addEventListener('resize', () => {
 });
 
 drawSnow();
+
+
+const metalDescriptions = {
+    'Мідь': 'Вироби з чистої міді без ізоляції: дроти, труби, листи, деталі.',
+    'Латунь': 'Вироби з чистої латуні: труби, деталі, сантехнічні елементи.',
+    'Радіатор латунний': 'Латунні радіатори та їхні частини без домішок інших металів.',
+    'Алюміній побутовий': 'Посуд, профілі, листовий алюміній.',
+    'Алюміній електротехнічний': 'Кабелі та провідники високої чистоти.',
+    'Нержавіюча сталь': 'Нержавійка з вмістом нікелю 10%.',
+    'Нержавіюча сталь (8% нікелю)': 'Нержавійка з вмістом нікелю 8%',
+    'Магній': 'Надзвичайно легкий, ковкий метал сріблясто-білого кольору, який широко використовується як у промисловості для створення легких і міцних сплавів.',
+    'ЦАМ (цинк-алюміній-магній)': 'Литі деталі, автомеханізми.',
+    'Стружка мідна': 'Відходи після обробки міді.',
+    'Стружка латунна': 'Відходи після обробки латуні.',
+    'Свинець': 'Вироби зі свинцю.',
+    'Свинець кабельний': 'Кабельний свинець без домішок.',
+    'Акумулятор білий': 'Білі акумулятори від авто та техніки, приймаються цілі або пошкоджені.',
+    'Акумулятор чорний': 'Чорні акумулятори.',
+    'ТНЖ великі': 'Тверді немагнітні жаростійкі сплави.',
+    'ТНЖ маленькі': 'Малі деталі ТНЖ.',
+    'Титан': 'Легкий і міцний метал.',
+    'Високолегована сталь 18-99% Ni': 'Нікелеві сплави високої вартості.',
+    'Чорний металобрухт': 'Залізо, сталь.'
+};
+
+const modal = document.getElementById('metal-modal');
+const modalTitle = document.getElementById('modal-title');
+const modalDesc = document.getElementById('modal-description');
+const modalPrice = document.getElementById('modal-price');
+const modalJunk = document.getElementById('modal-junk');
+
+document.addEventListener('click', e => {
+    const metalCell = e.target.closest('.metal-name');
+    if (!metalCell) return;
+
+    const metal = metalCell.dataset.metal;
+    const priceItem = prices.find(p => p.name === metal);
+
+    modalTitle.textContent = metal;
+    modalDesc.textContent = metalDescriptions[metal] || 'Опис відсутній';
+    modalPrice.textContent = priceItem.current;
+    modalJunk.textContent = priceItem.junk;
+
+    modal.classList.add('show');
+});
+
+document.querySelector('.modal-close').onclick = () =>
+    modal.classList.remove('show');
+
+modal.onclick = e => {
+    if (e.target === modal) modal.classList.remove('show');
+};
