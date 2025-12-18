@@ -1071,8 +1071,8 @@ tr:nth-child(even) {
 .contact-item {
   flex: 1 1 420px;
   display: flex;
+  align-items: center;
   gap: 0.8rem;
-  align-items: flex-start;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   font-size: 18px;
@@ -1089,11 +1089,14 @@ tr:nth-child(even) {
 /* ЗНАЧЕННЯ */
 .contact-value {
   color: #fafafa;
-  text-decoration: none;
   line-height: 1.5;
 }
 
-.contact-value:hover {
+.glass-link {
+  text-decoration: none;
+}
+
+.glass-link:hover {
   text-decoration: underline;
 }
 
@@ -1680,10 +1683,53 @@ tr:nth-child(even) {
   inset: 0;
   pointer-events: none;
   border-radius: 20px;
+}
 
-  /* background: radial-gradient(
-    ellipse at center,
-    rgba(255, 255, 255, 0.08),
-    rgba(0, 0, 0, 0.9)
-  ); */
+.glass-links {
+  display: flex;
+  gap: 12px;
+}
+
+.glass-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 6px 14px;
+  border-radius: 12px;
+
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+
+  transition: all 0.35s ease;
+}
+
+.glass-link svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+/* Hover */
+.glass-link:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* Акценти */
+.glass-link.linkedin:hover {
+  color: #0a66c2;
+}
+
+.glass-link.telegram:hover {
+  color: #29a9eb;
 }
