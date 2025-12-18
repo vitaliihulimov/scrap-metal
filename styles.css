@@ -1337,6 +1337,9 @@ tr:nth-child(even) {
   cursor: pointer;
 }
 
+.metal-name:hover {
+  color: #923a3a;
+}
 .price-row {
   opacity: 0;
   transform: translateY(14px);
