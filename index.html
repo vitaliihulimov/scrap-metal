@@ -121,48 +121,56 @@
           Калькулятор вартості з кошиком
         </h2>
 
-        <label for="metal-type" style="text-align: center; color: #fafafa; padding-bottom: 20px">Оберіть метал:</label>
-        <select id="metal-type">
-          <option value="" disabled selected>Оберіть...</option>
-          <option value="Мідь">Мідь</option>
-          <option value="Латунь">Латунь</option>
-          <option value="Радіатор латунний">Радіатор латунний</option>
-          <option value="Алюміній побутовий">Алюміній побутовий</option>
-          <option value="Алюміній електротехнічний">
-            Алюміній електротехнічний
-          </option>
-          <option value="Нержавіюча сталь">Нержавіюча сталь</option>
-          <option value="Нержавіюча сталь (8% нікелю)">
-            Нержавіюча сталь (8% нікелю)
-          </option>
-          <option value="Магній">Магній</option>
-          <option value="ЦАМ (цинк-алюміній-магній)">
-            ЦАМ (цинк-алюміній-магній)
-          </option>
-          <option value="Стружка мідна">Стружка мідна</option>
-          <option value="Стружка латунна">Стружка латунна</option>
-          <option value="Свинець">Свинець</option>
-          <option value="Свинець кабельний">Свинець кабельний</option>
-          <option value="Акумулятор білий">Акумулятор білий</option>
-          <option value="Акумулятор чорний">Акумулятор чорний</option>
-          <option value="ТНЖ великі">ТНЖ великі</option>
-          <option value="ТНЖ маленькі">ТНЖ маленькі</option>
-          <option value="Титан">Титан</option>
-          <option value="Високолегована сталь 18-99% Ni">
-            Високолегована сталь 18-99% Ni
-          </option>
-          <option value="Чорний металобрухт">Чорний металобрухт</option>
-        </select>
+        <div class="div-metal-type"><label for="metal-type"
+            style="text-align: center; color: #fafafa; font-size: 14px;">Оберіть
+            метал:</label>
 
-        <label for="weight" style="text-align: center; color: #fafafa; padding-bottom: 20px">Введіть вагу (кг):</label>
-        <input type="number" id="weight" placeholder="Напр. 10" min="0" step="0.01" />
+          <select id="metal-type" class="select-metal-type">
+            <option value="" disabled selected>Оберіть...</option>
+            <option value="Мідь">Мідь</option>
+            <option value="Латунь">Латунь</option>
+            <option value="Радіатор латунний">Радіатор латунний</option>
+            <option value="Алюміній побутовий">Алюміній побутовий</option>
+            <option value="Алюміній електротехнічний">
+              Алюміній електротехнічний
+            </option>
+            <option value="Нержавіюча сталь">Нержавіюча сталь</option>
+            <option value="Нержавіюча сталь (8% нікелю)">
+              Нержавіюча сталь (8% нікелю)
+            </option>
+            <option value="Магній">Магній</option>
+            <option value="ЦАМ (цинк-алюміній-магній)">
+              ЦАМ (цинк-алюміній-магній)
+            </option>
+            <option value="Стружка мідна">Стружка мідна</option>
+            <option value="Стружка латунна">Стружка латунна</option>
+            <option value="Свинець">Свинець</option>
+            <option value="Свинець кабельний">Свинець кабельний</option>
+            <option value="Акумулятор білий">Акумулятор білий</option>
+            <option value="Акумулятор чорний">Акумулятор чорний</option>
+            <option value="ТНЖ великі">ТНЖ великі</option>
+            <option value="ТНЖ маленькі">ТНЖ маленькі</option>
+            <option value="Титан">Титан</option>
+            <option value="Високолегована сталь 18-99% Ni">
+              Високолегована сталь 18-99% Ni
+            </option>
+            <option value="Чорний металобрухт">Чорний металобрухт</option>
+          </select>
+        </div>
 
-        <button id="add-to-cart-btn" style="background-color: #484b4d">
-          Додати в кошик
-        </button>
-        <button id="clear-cart-btn" style="background-color: #d9534f; color: white; margin-left: 10px">
-          Очистити все
-        </button>
+        <div class="calculator-label"><label for="weight"
+            style="text-align: center; color: #fafafa; font-size: 14px;">Введіть вагу
+            (кг):</label>
+          <input type="number" id="weight" placeholder="Напр. 10" min="0" step="0.01" class="input-number" />
+        </div>
+
+        <div class="calculator-btn"><button id="add-to-cart-btn" style="background-color: #484b4d">
+            Додати в кошик
+          </button>
+          <button id="clear-cart-btn" style="background-color: #d9534f; color: white; margin-left: 10px">
+            Очистити все
+          </button>
+        </div>
 
         <h3 style="text-align: center; color: #fafafa; padding-bottom: 20px">
           Кошик:
