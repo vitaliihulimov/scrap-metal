@@ -456,3 +456,25 @@ document.querySelector('.modal-close').onclick = () =>
 modal.onclick = e => {
     if (e.target === modal) modal.classList.remove('show');
 };
+
+
+const list = document.querySelector('.advantage-list');
+const inner = list.querySelector('.inner');
+
+list.addEventListener('mousemove', (e) => {
+    const rect = list.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const rotateY = ((x / rect.width) - 0.5) * 14;
+    const rotateX = ((y / rect.height) - 0.5) * -14;
+
+    inner.style.transform = `
+    rotateX(${rotateX}deg)
+    rotateY(${rotateY}deg)
+  `;
+});
+
+list.addEventListener('mouseleave', () => {
+    inner.style.transform = 'rotateX(0deg) rotateY(0deg)';
+});

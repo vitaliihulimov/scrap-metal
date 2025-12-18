@@ -111,8 +111,22 @@ body {
   text-align: center;
   color: #923a3a;
   margin-top: 56px;
+  background: linear-gradient(145deg, #2b2b2b, #0f0f0f);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.8), 0 12px 30px rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  padding: 24px;
 }
 
+.div-price {
+  background: linear-gradient(145deg, #2b2b2b, #0f0f0f);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.8), 0 12px 30px rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  padding: 24px;
+  width: fit-content;
+  margin: 0 auto;
+}
 .advantage-ul {
   display: flex;
   gap: 24px;
@@ -145,7 +159,7 @@ body {
   font-size: 56px;
   text-align: center;
   color: #923a3a;
-  margin-top: 56px;
+
   padding-bottom: 16px;
 }
 
@@ -176,18 +190,23 @@ body {
 }
 
 .table {
-  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding-top: 32px;
   margin-bottom: 56px;
+  background: linear-gradient(145deg, #2b2b2b, #0f0f0f);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.8), 0 12px 30px rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 24px;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
   color: #fafafa;
-  background: rgba(145, 145, 145, 0.15);
+  background: linear-gradient(145deg, #2b2b2b, #0f0f0f);
   border-radius: 8px;
   overflow: hidden;
 }
@@ -202,7 +221,7 @@ td {
 th {
   font-weight: 600;
   font-size: 20px;
-  background: rgba(255, 255, 255, 0.1);
+  background: linear-gradient(145deg, #2b2b2b, #0f0f0f);
 }
 
 td {
@@ -219,9 +238,11 @@ td {
   backdrop-filter: blur(20px);
   box-shadow: inset 0 4px 20px 0 rgba(255, 255, 255, 0.4),
     0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  background: rgba(145, 145, 145, 0.15);
+  background: linear-gradient(145deg, #2b2b2b, #0f0f0f);
   margin: 0 auto;
   padding: 32px 102px;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.8), 0 12px 30px rgba(0, 0, 0, 0.7);
 }
 
 /* Services */
@@ -717,9 +738,16 @@ tr:nth-child(even) {
 
 .services-h2 {
   text-align: center;
-  /* margin-bottom: 40px; */
-  font-size: 2.5rem;
-  color: #923a3a;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  background: linear-gradient(145deg, #2b2b2b, #0f0f0f);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.8), 0 12px 30px rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  padding: 24px;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 /* Контейнер біжучої строки */
@@ -752,9 +780,10 @@ tr:nth-child(even) {
 
   border-radius: 12px;
   padding: 20px;
-  box-shadow: rgba(255, 255, 255, 0.4) 0px 4px 20px 0px inset,
-    rgba(0, 0, 0, 0.25) 0px 4px 4px 0px;
+  background: linear-gradient(145deg, #2b2b2b, #0f0f0f);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.8), 0 12px 30px rgba(0, 0, 0, 0.7);
 }
 
 .service-item img {
@@ -854,6 +883,7 @@ tr:nth-child(even) {
   width: fit-content;
   animation: loop 20s linear infinite; /* можна налаштувати швидкість */
   padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .advantage-item {
@@ -1011,6 +1041,16 @@ tr:nth-child(even) {
 .contacts-h2 {
   text-align: center;
   margin-bottom: 2.5rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  background: linear-gradient(145deg, #2b2b2b, #0f0f0f);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.8), 0 12px 30px rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  padding: 24px;
+  width: fit-content;
+  margin: 0 auto;
+  margin-bottom: 42px;
 }
 
 /* GRID НА FLEX */
@@ -1020,6 +1060,11 @@ tr:nth-child(even) {
   gap: 2rem;
   max-width: 900px;
   margin: 0 auto;
+  background: linear-gradient(145deg, #2b2b2b, #0f0f0f);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.8), 0 12px 30px rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  padding: 24px;
 }
 
 /* ОДИН РЯДОК */
@@ -1152,6 +1197,7 @@ tr:nth-child(even) {
 #dynamic-prices tr.show {
   opacity: 1;
   transform: translateY(0);
+  background: linear-gradient(145deg, #2b2b2b, #0f0f0f);
 }
 
 /* Стрілки мерехтять */
@@ -1233,6 +1279,9 @@ tr:nth-child(even) {
   border-radius: 4px;
   background-color: #d9534f;
   color: white;
+  margin-left: 16px;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.8), 0 12px 30px rgba(0, 0, 0, 0.7);
 }
 
 .calculator {
@@ -1399,7 +1448,7 @@ tr:nth-child(even) {
   /* 3D ефект */
   box-shadow: inset 0 4px 20px 0 rgba(255, 255, 255, 0.4),
     0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  background: rgba(145, 145, 145, 0.15);
+  background: linear-gradient(145deg, #2b2b2b, #0f0f0f);
 
   transform: translateZ(0);
 }
@@ -1557,4 +1606,51 @@ tr:nth-child(even) {
     top: 45px;
     right: 10px;
   }
+}
+
+.advantage-list {
+  position: relative;
+  perspective: 1200px;
+  margin: 40px auto;
+}
+
+.inner {
+  display: flex;
+  gap: 24px;
+  transform-style: preserve-3d;
+  transition: transform 0.2s ease;
+}
+
+.advantage-item {
+  min-width: 280px;
+  padding: 20px 24px;
+
+  background: linear-gradient(145deg, #2b2b2b, #0f0f0f);
+  color: #fff;
+  border-radius: 16px;
+
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.8), 0 12px 30px rgba(0, 0, 0, 0.7);
+
+  transform: translateZ(40px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.advantage-item:hover {
+  transform: translateZ(80px);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2),
+    inset 0 -2px 6px rgba(0, 0, 0, 0.9), 0 20px 50px rgba(0, 0, 0, 0.9);
+}
+
+.fade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 20px;
+
+  /* background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.08),
+    rgba(0, 0, 0, 0.9)
+  ); */
 }
