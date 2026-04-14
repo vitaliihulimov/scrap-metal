@@ -746,6 +746,9 @@ tr:nth-child(even) {
     height: 45px;
     font-size: 18px;
   }
+  .div-price {
+    margin: 0 8px 0 8px;
+  }
 }
 
 .services {
