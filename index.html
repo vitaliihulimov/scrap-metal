@@ -173,26 +173,20 @@
         </div>
 
         <h3 style="text-align: center; color: #fafafa; padding-bottom: 20px">
-          Кошик:
+          🛒 Кошик
         </h3>
-        <div style="overflow-x: auto">
-          <table id="cart-table" border="1" cellspacing="0" cellpadding="5" style="width: 100%; max-width: 100%">
-            <thead>
-              <tr>
-                <th>Метал</th>
-                <th>Вага (кг)</th>
-                <th>Ціна за кг</th>
-                <th>Засмічення</th>
-                <th>Чиста вага (кг)</th>
-                <th>Вартість (грн)</th>
-                <th>Дія</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
+
+        <!-- Контейнер для карток замість таблиці -->
+        <div id="cart-items" class="cart-items">
+          <div class="empty-cart">📭 Кошик порожній. Додайте метал!</div>
         </div>
 
-        <p class="total-price">Орієнтовна вартість: <span id="total-price">0</span> грн</p>
+        <!-- Загальна сума -->
+        <div class="cart-total">
+          <span>💰 Орієнтовна вартість:</span>
+          <span id="total-price">0</span>
+          <span>грн</span>
+        </div>
       </div>
     </section>
 

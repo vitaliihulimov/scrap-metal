@@ -69,40 +69,71 @@ populateMetalSelect();
 const cart = [];
 
 function renderCart() {
-    const tbody = document.querySelector('#cart-table tbody');
-    tbody.innerHTML = '';
+    const container = document.getElementById('cart-items');
+    if (!container) return;
+
     let totalPrice = 0;
 
-    cart.forEach((item, index) => {
-        // Розрахунок чистої ваги: вага - (вага * waste / 100)
-        const cleanWeight = item.weight - (item.weight * item.waste / 100);
+    if (cart.length === 0) {
+        container.innerHTML = '<div class="empty-cart">📭 Кошик порожній. Додайте метал!</div>';
+        document.getElementById('total-price').textContent = '0';
+        return;
+    }
 
-        // Округлення чистої ваги ВНИЗ до 0.1 кг для всіх металів
+    container.innerHTML = '';
+
+    cart.forEach((item, index) => {
+        // Розрахунок чистої ваги
+        const cleanWeight = item.weight - (item.weight * item.waste / 100);
         const roundedCleanWeight = Math.floor(cleanWeight * 10) / 10;
 
         // Розрахунок суми
         let itemTotal = roundedCleanWeight * item.basePrice;
-        itemTotal = Math.floor(itemTotal); // Округлення до цілого числа
+        itemTotal = Math.floor(itemTotal);
 
         totalPrice += itemTotal;
 
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>${item.metal}</td>
-            <td>${item.weight.toFixed(1)} кг</td>
-            <td>${item.basePrice} грн</td>
-            <td>${item.waste}%</td>
-            <td>${roundedCleanWeight.toFixed(1)} кг</td>
-            <td>${itemTotal} грн</td>
-            <td><button data-index="${index}" class="remove-btn">✖</button></td>
+        // Створюємо картку
+        const card = document.createElement('div');
+        card.className = 'cart-card';
+        card.innerHTML = `
+            <div class="cart-card-header">
+                <span class="cart-card-metal">${item.metal}</span>
+                <button class="cart-card-remove" data-index="${index}">✖</button>
+            </div>
+            <div class="cart-card-details">
+                <div class="cart-card-detail">
+                    <span class="cart-card-detail-label">📦 Брудна вага:</span>
+                    <span class="cart-card-detail-value">${item.weight.toFixed(1)} кг</span>
+                </div>
+                <div class="cart-card-detail">
+                    <span class="cart-card-detail-label">💰 Ціна за кг:</span>
+                    <span class="cart-card-detail-value">${item.basePrice} грн</span>
+                </div>
+                <div class="cart-card-detail">
+                    <span class="cart-card-detail-label">⚙️ Засмічення:</span>
+                    <span class="cart-card-detail-value">${item.waste}%</span>
+                </div>
+                <div class="cart-card-detail">
+                    <span class="cart-card-detail-label">✅ Чиста вага:</span>
+                    <span class="cart-card-detail-value">${roundedCleanWeight.toFixed(1)} кг</span>
+                </div>
+                <div class="cart-card-detail">
+                    <span class="cart-card-detail-label">💵 Вартість:</span>
+                    <span class="cart-card-detail-value"><strong>${itemTotal.toLocaleString()} грн</strong></span>
+                </div>
+            </div>
         `;
-        tbody.appendChild(row);
+        container.appendChild(card);
     });
 
-    document.getElementById('total-price').textContent = totalPrice;
+    // Оновлюємо загальну суму
+    document.getElementById('total-price').textContent = totalPrice.toLocaleString();
 
-    document.querySelectorAll('.remove-btn').forEach(button => {
+    // Додаємо обробники для кнопок видалення
+    document.querySelectorAll('.cart-card-remove').forEach(button => {
         button.addEventListener('click', e => {
+            e.stopPropagation();
             const index = +e.target.getAttribute('data-index');
             cart.splice(index, 1);
             renderCart();
@@ -416,6 +447,23 @@ list.addEventListener('mousemove', (e) => {
 list.addEventListener('mouseleave', () => {
     inner.style.transform = 'rotateX(0deg) rotateY(0deg)';
 });
+
+/* Автоматичний перехід до поля ваги після вибору металу */
+const metalSelectField = document.getElementById('metal-type');
+const weightInputField = document.getElementById('weight');
+
+if (metalSelectField && weightInputField) {
+    metalSelectField.addEventListener('change', () => {
+        if (metalSelectField.value && metalSelectField.value !== '') {
+            // Невелика затримка для кращої роботи на мобільних
+            setTimeout(() => {
+                weightInputField.focus();
+                // Прокручуємо до поля ваги
+                weightInputField.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 100);
+        }
+    });
+}
 
 /* Обробка Enter в полі ваги - додавання + приховування клавіатури */
 const weightField = document.getElementById('weight');
