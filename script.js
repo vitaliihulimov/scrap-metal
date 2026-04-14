@@ -417,13 +417,16 @@ list.addEventListener('mouseleave', () => {
     inner.style.transform = 'rotateX(0deg) rotateY(0deg)';
 });
 
-/* Обробка натискання Enter в полі ваги */
-document.getElementById('weight').addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') {
-        e.preventDefault();
-        const addBtn = document.getElementById('add-to-cart-btn');
-        if (addBtn) {
-            addBtn.click();
+/* Обробка Enter в полі ваги - додавання + приховування клавіатури */
+const weightField = document.getElementById('weight');
+const addButton = document.getElementById('add-to-cart-btn');
+
+if (weightField && addButton) {
+    weightField.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            weightField.blur();  // Ховаємо клавіатуру
+            addButton.click();   // Додаємо метал
         }
-    }
-});
+    });
+}
