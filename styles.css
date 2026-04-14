@@ -1330,7 +1330,6 @@ tr:nth-child(even) {
 .calculator-btn {
   padding: 24px 20px;
   font-size: 18px;
-  cursor: pointer;
   border: none;
   border-radius: 8px;
   color: white;
