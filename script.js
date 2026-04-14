@@ -18,27 +18,53 @@ updateDate();
 /* Калькулятор ціни металобрухту */
 
 const priceMap = {
-    Мідь: { price: 371, waste: 1 },
-    Латунь: { price: 236, waste: 1 },
-    'Радіатор латунний': { price: 236, waste: 2 },
-    'Алюміній побутовий': { price: 64, waste: 1 },
-    'Алюміній електротехнічний': { price: 92, waste: 1 },
-    'Нержавіюча сталь': { price: 42, waste: 0.5 },
-    'Нержавіюча сталь (8% нікелю)': { price: 32, waste: 0.5 },
-    Магній: { price: 33, waste: 3 },
-    'ЦАМ (цинк-алюміній-магній)': { price: 59, waste: 3 },
-    'Стружка мідна': { price: 329, waste: 1 },
-    'Стружка латунна': { price: 228, waste: 3 },
-    Свинець: { price: 64, waste: 1 },
-    'Свинець кабельний': { price: 66, waste: 1 },
-    'Акумулятор білий': { price: 20, waste: 1 },
-    'Акумулятор чорний': { price: 16, waste: 1 },
-    'ТНЖ великі': { price: 18, waste: 3 },
-    'ТНЖ маленькі': { price: 16, waste: 3 },
-    Титан: { price: 80, waste: 0.5 },
-    'Високолегована сталь 18-99% Ni': { price: 4000, waste: 0 },
-    'Чорний металобрухт': { price: 5, waste: 0 },
+    Мідь: { price: 494, waste: 1 },
+    Латунь: { price: 273, waste: 1 },
+    'Радіатор латунний': { price: 273, waste: 2 },
+    'Алюміній побутовий': { price: 82, waste: 1 },
+    'Алюміній електротехнічний': { price: 124, waste: 1 },
+    'Нержавіюча сталь': { price: 28, waste: 0.5 },
+    'Нержавіюча сталь (8% нікелю)': { price: 23, waste: 0.5 },
+    Магній: { price: 58, waste: 3 },
+    'ЦАМ (цинк-алюміній-магній)': { price: 65, waste: 3 },
+    'Стружка мідна': { price: 452, waste: 1 },
+    'Стружка латунна': { price: 265, waste: 3 },
+    Свинець: { price: 63, waste: 1 },
+    'Свинець кабельний': { price: 65, waste: 1 },
+    'Акумулятор білий': { price: 23, waste: 1 },
+    'Акумулятор чорний': { price: 15, waste: 1 },
+    'ТНЖ великі': { price: 16, waste: 3 },
+    'ТНЖ маленькі': { price: 14, waste: 3 },
+    Титан: { price: 85, waste: 0.5 },
+    'Високолегована сталь 18-99% Ni': { price: 2800, waste: 0 },
+    'Чорний металобрухт': { price: 5.5, waste: 0 },
 };
+
+// Заповнення випадаючого списку з priceMap (виключаючи високолеговану сталь)
+function populateMetalSelect() {
+    const metalSelect = document.getElementById('metal-type');
+
+    // Очищаємо всі опції, крім першої (заглушки)
+    while (metalSelect.options.length > 1) {
+        metalSelect.remove(1);
+    }
+
+    // Перебираємо всі метали з priceMap
+    for (const metalName in priceMap) {
+        // Пропускаємо високолеговану сталь
+        if (metalName === 'Високолегована сталь 18-99% Ni') {
+            continue;
+        }
+
+        const option = document.createElement('option');
+        option.value = metalName;
+        option.textContent = metalName;
+        metalSelect.appendChild(option);
+    }
+}
+
+// Викликаємо функцію після завантаження сторінки
+populateMetalSelect();
 
 const cart = [];
 
@@ -48,31 +74,28 @@ function renderCart() {
     let totalPrice = 0;
 
     cart.forEach((item, index) => {
-        let cleanedPrice = item.basePrice - (item.basePrice * item.waste) / 100;
-        let itemTotal;
+        // Розрахунок чистої ваги: вага - (вага * waste / 100)
+        const cleanWeight = item.weight - (item.weight * item.waste / 100);
 
-        if (item.metal === 'Чорний металобрухт') {
-            // Віднімання 3% + округлення вниз до 0.1 (десяткове)
-            cleanedPrice = Math.floor(cleanedPrice * 10) / 10;
-            itemTotal = cleanedPrice * item.weight;
-            itemTotal = Math.round(itemTotal); // Округлення загальної суми до цілого
-        } else {
-            // Для інших металів - округлення вниз до цілого
-            cleanedPrice = Math.floor(cleanedPrice);
-            itemTotal = cleanedPrice * item.weight;
-        }
+        // Округлення чистої ваги ВНИЗ до 0.1 кг для всіх металів
+        const roundedCleanWeight = Math.floor(cleanWeight * 10) / 10;
+
+        // Розрахунок суми
+        let itemTotal = roundedCleanWeight * item.basePrice;
+        itemTotal = Math.floor(itemTotal); // Округлення до цілого числа
 
         totalPrice += itemTotal;
 
         const row = document.createElement('tr');
         row.innerHTML = `
-        <td>${item.metal}</td>
-        <td>${Math.round(item.weight)}</td>
-        <td>${item.basePrice} грн</td>
-        <td>${item.waste}%</td>
-        <td>${itemTotal}</td>
-        <td><button data-index="${index}" class="remove-btn">✖</button></td>
-      `;
+            <td>${item.metal}</td>
+            <td>${item.weight.toFixed(1)} кг</td>
+            <td>${item.basePrice} грн</td>
+            <td>${item.waste}%</td>
+            <td>${roundedCleanWeight.toFixed(1)} кг</td>
+            <td>${itemTotal} грн</td>
+            <td><button data-index="${index}" class="remove-btn">✖</button></td>
+        `;
         tbody.appendChild(row);
     });
 
@@ -156,46 +179,46 @@ scrollToTopBtn.addEventListener('click', () => {
 
 /* Ціни на метали в таблиці */
 const prices = [
-    { name: 'Мідь', junk: '-1%', current: 371, previous: 367 },
-    { name: 'Латунь', junk: '-1%', current: 236, previous: 236 },
-    { name: 'Радіатор латунний', junk: '-2%', current: 236, previous: 235 },
-    { name: 'Алюміній побутовий', junk: '-1%', current: 64, previous: 64 },
+    { name: 'Мідь', junk: '-1%', current: 494, previous: 485 },
+    { name: 'Латунь', junk: '-1%', current: 273, previous: 270 },
+    { name: 'Радіатор латунний', junk: '-2%', current: 273, previous: 270 },
+    { name: 'Алюміній побутовий', junk: '-1%', current: 82, previous: 81 },
     {
         name: 'Алюміній електротехнічний',
         junk: '-1%',
-        current: 92,
-        previous: 92,
+        current: 124,
+        previous: 122,
     },
-    { name: 'Нержавіюча сталь', junk: '-0,5%', current: 42, previous: 42 },
+    { name: 'Нержавіюча сталь', junk: '-0,5%', current: 28, previous: 28 },
     {
         name: 'Нержавіюча сталь (8% нікелю)',
         junk: '-0,5%',
-        current: 32,
-        previous: 32,
+        current: 23,
+        previous: 23,
     },
-    { name: 'Магній', junk: '-3%', current: 33, previous: 33 },
+    { name: 'Магній', junk: '-3%', current: 58, previous: 58 },
     {
         name: 'ЦАМ (цинк-алюміній-магній)',
         junk: '-3%',
-        current: 59,
-        previous: 59,
+        current: 65,
+        previous: 65,
     },
-    { name: 'Стружка мідна', junk: '-1%', current: 329, previous: 329 },
-    { name: 'Стружка латунна', junk: '-1%', current: 228, previous: 228 },
-    { name: 'Свинець', junk: '-1%', current: 64, previous: 64 },
-    { name: 'Свинець кабельний', junk: '-1%', current: 66, previous: 66 },
-    { name: 'Акумулятор білий', junk: '-1%', current: 20, previous: 23 },
-    { name: 'Акумулятор чорний', junk: '-1%', current: 16, previous: 17 },
-    { name: 'ТНЖ великі', junk: '-3%', current: 18, previous: 20 },
-    { name: 'ТНЖ маленькі', junk: '-3%', current: 16, previous: 18 },
-    { name: 'Титан', junk: '-0.5%', current: 80, previous: 82 },
+    { name: 'Стружка мідна', junk: '-1%', current: 452, previous: 452 },
+    { name: 'Стружка латунна', junk: '-1%', current: 265, previous: 262 },
+    { name: 'Свинець', junk: '-1%', current: 63, previous: 63 },
+    { name: 'Свинець кабельний', junk: '-1%', current: 65, previous: 65 },
+    { name: 'Акумулятор білий', junk: '-1%', current: 23, previous: 23 },
+    { name: 'Акумулятор чорний', junk: '-1%', current: 15, previous: 15 },
+    { name: 'ТНЖ великі', junk: '-3%', current: 16, previous: 16 },
+    { name: 'ТНЖ маленькі', junk: '-3%', current: 14, previous: 14 },
+    { name: 'Титан', junk: '-0.5%', current: 85, previous: 85 },
     {
         name: 'Високолегована сталь 18-99% Ni',
         junk: '0%',
-        current: 4000,
-        previous: 4100,
+        current: 2800,
+        previous: 2800,
     },
-    { name: 'Чорний металобрухт', junk: '0%', current: 5, previous: 5 },
+    { name: 'Чорний металобрухт', junk: '0%', current: 5.5, previous: 5.5 },
 ];
 
 function renderPrices() {
@@ -318,92 +341,7 @@ const observers = new IntersectionObserver(
 
 typeElements.forEach(el => observers.observe(el));
 
-/* Сніг */
-const canvas = document.getElementById('snow-canvas');
-const ctx = canvas.getContext('2d');
 
-let width = (canvas.width = window.innerWidth);
-let height = (canvas.height = window.innerHeight);
-
-const numFlakes = 50; // менше сніжинок
-const flakes = [];
-const ground = []; // для накопичення сніжинок внизу
-
-for (let i = 0; i < numFlakes; i++) {
-    flakes.push({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        r: Math.random() * 4 + 1, // радіус сніжинки
-        d: Math.random() * numFlakes,
-        tilt: Math.random() * 10,
-        tiltAngleIncremental: Math.random() * 0.05 + 0.01,
-        speed: Math.random() * 1 + 0.5,
-    });
-}
-
-// малюємо сніг
-function drawSnow() {
-    ctx.clearRect(0, 0, width, height);
-
-    // малюємо падаючі сніжинки
-    ctx.fillStyle = 'rgba(255,255,255,0.8)';
-    ctx.beginPath();
-    for (let i = 0; i < flakes.length; i++) {
-        const f = flakes[i];
-        ctx.moveTo(f.x, f.y);
-        ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2, true);
-    }
-    ctx.fill();
-
-    // малюємо сніг на «землі»
-    ctx.fillStyle = 'rgba(255,255,255,0.9)';
-    ground.forEach(g => {
-        ctx.beginPath();
-        ctx.arc(g.x, g.y, g.r, 0, Math.PI * 2);
-        ctx.fill();
-    });
-
-    updateSnow();
-}
-
-// оновлення позицій
-function updateSnow() {
-    for (let i = 0; i < flakes.length; i++) {
-        const f = flakes[i];
-        f.tilt += f.tiltAngleIncremental;
-        f.y += f.speed;
-        f.x += Math.sin(f.tilt) * 1.5;
-
-        // якщо сніжинка досягла низу
-        if (f.y + f.r >= height - 2) {
-            ground.push({ x: f.x, y: height - f.r, r: f.r });
-            resetFlake(f);
-        }
-
-        // якщо сніжинка виходить за бічні межі
-        if (f.x > width) f.x = width;
-        if (f.x < 0) f.x = 0;
-    }
-
-    requestAnimationFrame(drawSnow);
-}
-
-// скидання сніжинки наверх
-function resetFlake(f) {
-    f.x = Math.random() * width;
-    f.y = -10;
-    f.r = Math.random() * 4 + 1;
-    f.speed = Math.random() * 1 + 0.5;
-    f.tilt = Math.random() * 10;
-}
-
-// адаптація під розмір вікна
-window.addEventListener('resize', () => {
-    width = canvas.width = window.innerWidth;
-    height = canvas.height = window.innerHeight;
-});
-
-drawSnow();
 
 
 const metalDescriptions = {
