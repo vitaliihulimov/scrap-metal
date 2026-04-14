@@ -416,3 +416,14 @@ list.addEventListener('mousemove', (e) => {
 list.addEventListener('mouseleave', () => {
     inner.style.transform = 'rotateX(0deg) rotateY(0deg)';
 });
+
+/* Обробка натискання Enter в полі ваги */
+document.getElementById('weight').addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        const addBtn = document.getElementById('add-to-cart-btn');
+        if (addBtn) {
+            addBtn.click();
+        }
+    }
+});
